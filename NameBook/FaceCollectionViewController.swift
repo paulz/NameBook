@@ -3,16 +3,22 @@ import Contacts
 
 private let reuseIdentifier = "face cell"
 
-class FaceCollectionViewController: UIViewController, UICollectionViewDelegate {
+class FaceCollectionViewController: UIViewController {
     var contactsService: ContactsService = ContactsService()
     var gameController: GameController!
 
+    @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var nameToGuess: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let orgContacts = contactsService.getContacts(organizationName: "Omada Health")
         gameController = GameController(contacts: orgContacts)
+        play()
+    }
+
+    func play()  {
         gameController.nextRound()
+        collectionView.reloadData()
         nameToGuess.text = CNContactFormatter.string(from: gameController.correct, style: .fullName)
     }
 
@@ -59,6 +65,12 @@ class FaceCollectionViewController: UIViewController, UICollectionViewDelegate {
 
 }
 
+extension FaceCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        play()
+    }
+}
 
 extension FaceCollectionViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
