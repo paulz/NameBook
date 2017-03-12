@@ -12,6 +12,9 @@ struct GameController {
         var selection = gameContacts
         var selected: [CNContact] = []
         for _ in 0...count {
+            if selection.count == 0 {
+                break
+            }
             let random = Int(arc4random()) % selection.count
             let contact = selection[random]
             selection.remove(at: random)
