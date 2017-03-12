@@ -3,7 +3,7 @@ import Contacts
 
 private let reuseIdentifier = "face cell"
 
-class FaceCollectionViewController: UICollectionViewController {
+class FaceCollectionViewController: UIViewController, UICollectionViewDelegate {
     var contactsService: ContactsService = ContactsService()
     var gameController: GameController!
     var contacts: [CNContact]!
@@ -24,23 +24,6 @@ class FaceCollectionViewController: UICollectionViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contacts.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FaceCollectionViewCell
-        cell.configure(with: contacts[indexPath.row])
-        return cell
-    }
 
     // MARK: UICollectionViewDelegate
 
@@ -73,4 +56,22 @@ class FaceCollectionViewController: UICollectionViewController {
     }
     */
 
+}
+
+
+extension FaceCollectionViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return contacts.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FaceCollectionViewCell
+        cell.configure(with: contacts[indexPath.row])
+        return cell
+    }
 }
