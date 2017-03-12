@@ -45,16 +45,27 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khp-hv-v1S">
                                                             <rect key="frame" x="13" y="13" width="138" height="137"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✔️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QH1-Ch-NQb">
+                                                            <rect key="frame" x="13" y="13" width="138" height="137"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="QH1-Ch-NQb" firstAttribute="height" secondItem="khp-hv-v1S" secondAttribute="height" id="3im-dO-un3"/>
                                                     <constraint firstAttribute="bottomMargin" secondItem="khp-hv-v1S" secondAttribute="bottom" constant="5" id="8Rv-xA-l5A"/>
                                                     <constraint firstItem="khp-hv-v1S" firstAttribute="leading" secondItem="ij8-nI-eWs" secondAttribute="leadingMargin" constant="5" id="Apq-H3-1Om"/>
                                                     <constraint firstAttribute="trailingMargin" secondItem="khp-hv-v1S" secondAttribute="trailing" constant="5" id="DZX-qP-WbF"/>
                                                     <constraint firstItem="khp-hv-v1S" firstAttribute="top" secondItem="ij8-nI-eWs" secondAttribute="topMargin" constant="5" id="HX8-wg-ACs"/>
+                                                    <constraint firstItem="QH1-Ch-NQb" firstAttribute="width" secondItem="khp-hv-v1S" secondAttribute="width" id="R2s-tT-eXu"/>
+                                                    <constraint firstItem="QH1-Ch-NQb" firstAttribute="centerY" secondItem="khp-hv-v1S" secondAttribute="centerY" id="TQx-6U-vkT"/>
+                                                    <constraint firstItem="QH1-Ch-NQb" firstAttribute="centerX" secondItem="khp-hv-v1S" secondAttribute="centerX" id="aXY-gh-hXv"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="photoView" destination="khp-hv-v1S" id="pVt-kE-ktv"/>
+                                                    <outlet property="resultLabel" destination="QH1-Ch-NQb" id="WOm-ro-dFo"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

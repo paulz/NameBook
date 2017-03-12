@@ -70,8 +70,9 @@ extension FaceCollectionViewController: UICollectionViewDelegate {
         print(indexPath)
 
         let cell = collectionView.cellForItem(at: indexPath) as! FaceCollectionViewCell
-        cell.showResult(correct: gameController.isCorrect(selection: indexPath.row))
-        play()
+        cell.showResult(correct: gameController.isCorrect(selection: indexPath.row)) {
+            self.play()
+        }
     }
 }
 
