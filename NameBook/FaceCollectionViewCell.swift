@@ -8,4 +8,8 @@ class FaceCollectionViewCell: UICollectionViewCell {
             photoView.image = UIImage(data: imageData)
         }
     }
+
+    func showResult(correct:Bool) {
+        
+    }
 }

@@ -68,6 +68,9 @@ class FaceCollectionViewController: UIViewController {
 extension FaceCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
+
+        let cell = collectionView.cellForItem(at: indexPath) as! FaceCollectionViewCell
+        cell.showResult(correct: gameController.isCorrect(selection: indexPath.row))
         play()
     }
 }

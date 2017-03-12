@@ -10,6 +10,10 @@ struct GameController {
         gameContacts = contacts
     }
 
+    func isCorrect(selection:Int) -> Bool {
+        return choices.index(of: correct) == selection
+    }
+
     mutating func nextRound()  {
         choices = randomContacts(count: 6)
         let selected = Int(arc4random()) % choices.count
