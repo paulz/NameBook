@@ -13,6 +13,7 @@
 		4B3EF46A1E75E4650005FAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B3EF4691E75E4650005FAB9 /* Assets.xcassets */; };
 		4B3EF46D1E75E4650005FAB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B3EF46B1E75E4650005FAB9 /* LaunchScreen.storyboard */; };
 		4B3EF4781E75E4650005FAB9 /* NameBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EF4771E75E4650005FAB9 /* NameBookTests.swift */; };
+		4B3EF4831E75E8820005FAB9 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EF4821E75E8820005FAB9 /* ContactsService.swift */; };
 		A1D9E925C3AFD9C297AB63B7 /* Pods_NameBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6419DD4ED4EE225F21CB9032 /* Pods_NameBookTests.framework */; };
 		D1B2443DA9411303D6D24E64 /* Pods_NameBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09437D84B165DA31FE973CB9 /* Pods_NameBook.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		4B3EF4731E75E4650005FAB9 /* NameBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NameBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3EF4771E75E4650005FAB9 /* NameBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameBookTests.swift; sourceTree = "<group>"; };
 		4B3EF4791E75E4650005FAB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B3EF4821E75E8820005FAB9 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsService.swift; sourceTree = "<group>"; };
 		59E309289D3E2AB203FAE97E /* Pods-NameBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameBook/Pods-NameBook.release.xcconfig"; sourceTree = "<group>"; };
 		6419DD4ED4EE225F21CB9032 /* Pods_NameBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15BEE51F7BE89A2CF34D97 /* Pods-NameBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameBookTests/Pods-NameBookTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */,
 				4B3EF4641E75E4640005FAB9 /* ViewController.swift */,
+				4B3EF4821E75E8820005FAB9 /* ContactsService.swift */,
 				4B3EF4661E75E4650005FAB9 /* Main.storyboard */,
 				4B3EF4691E75E4650005FAB9 /* Assets.xcassets */,
 				4B3EF46B1E75E4650005FAB9 /* LaunchScreen.storyboard */,
@@ -333,6 +336,7 @@
 			files = (
 				4B3EF4651E75E4650005FAB9 /* ViewController.swift in Sources */,
 				4B3EF4631E75E4640005FAB9 /* AppDelegate.swift in Sources */,
+				4B3EF4831E75E8820005FAB9 /* ContactsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +548,7 @@
 				4B3EF47E1E75E4650005FAB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B3EF47F1E75E4650005FAB9 /* Build configuration list for PBXNativeTarget "NameBookTests" */ = {
 			isa = XCConfigurationList;
@@ -552,6 +557,7 @@
 				4B3EF4811E75E4650005FAB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,25 +1,10 @@
-//
-//  ViewController.swift
-//  NameBook
-//
-//  Created by Paul Zabelin on 3/12/17.
-//
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+    var contactsService: ContactsService = ContactsService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print(contactsService.getContacts())
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
