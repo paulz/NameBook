@@ -11,7 +11,7 @@ struct GameController {
     func randomContacts(count: Int) -> [CNContact] {
         var selection = gameContacts
         var selected: [CNContact] = []
-        for _ in 0...count {
+        for _ in 1...count {
             if selection.count == 0 {
                 break
             }

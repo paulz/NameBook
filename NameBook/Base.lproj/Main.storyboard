@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,12 +32,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="142" height="173"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khp-hv-v1S">
-                                            <rect key="frame" x="23" y="15" width="95" height="112"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khp-hv-v1S">
+                                            <rect key="frame" x="13" y="13" width="116" height="147"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="khp-hv-v1S" secondAttribute="bottom" constant="5" id="8Rv-xA-l5A"/>
+                                    <constraint firstItem="khp-hv-v1S" firstAttribute="leading" secondItem="ij8-nI-eWs" secondAttribute="leadingMargin" constant="5" id="Apq-H3-1Om"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="khp-hv-v1S" secondAttribute="trailing" constant="5" id="DZX-qP-WbF"/>
+                                    <constraint firstItem="khp-hv-v1S" firstAttribute="top" secondItem="ij8-nI-eWs" secondAttribute="topMargin" constant="5" id="HX8-wg-ACs"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="photoView" destination="khp-hv-v1S" id="pVt-kE-ktv"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
