@@ -2,10 +2,33 @@ import Foundation
 import Contacts
 
 struct ContactsService {
-    func getContacts() -> [CNContact] {
-        CNContactStore().requestAccess(for: CNEntityType.contacts) { (success, error) in
+    let contactStore = CNContactStore()
+
+    init() {
+        contactStore.requestAccess(for: CNEntityType.contacts) { (success, error) in
             print(success)
         }
-        return []
+    }
+
+    func getContacts(organizationName: String) -> [CNContact] {
+        let stringKeys = [
+            CNContactGivenNameKey,
+            CNContactOrganizationNameKey,
+            CNContactJobTitleKey,
+            CNContactThumbnailImageDataKey,
+            CNContactImageDataAvailableKey
+        ]
+        var keysToFetch: [CNKeyDescriptor] = [CNContact.descriptorForAllComparatorKeys()]
+        keysToFetch.append(contentsOf: stringKeys as [CNKeyDescriptor])
+        let request = CNContactFetchRequest(keysToFetch: keysToFetch)
+        var contacts: [CNContact] = []
+        try? contactStore.enumerateContacts(with: request) { (contact, more) in
+            if contact.organizationName == organizationName {
+                print(contact)
+                contacts.append(contact)
+            }
+        }
+        print(contacts.count)
+        return contacts
     }
 }

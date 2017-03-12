@@ -5,6 +5,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(contactsService.getContacts())
+        print(contactsService.getContacts(organizationName: "Omada Health"))
     }
 }
