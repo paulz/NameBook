@@ -2,9 +2,11 @@ import UIKit
 
 class ViewController: UIViewController {
     var contactsService: ContactsService = ContactsService()
+    var gameController: GameController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(contactsService.getContacts(organizationName: "Omada Health"))
+        let orgContacts = contactsService.getContacts(organizationName: "Omada Health")
+        gameController = GameController(contacts: orgContacts)
     }
 }
