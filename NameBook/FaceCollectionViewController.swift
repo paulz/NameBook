@@ -6,13 +6,14 @@ private let reuseIdentifier = "face cell"
 class FaceCollectionViewController: UIViewController, UICollectionViewDelegate {
     var contactsService: ContactsService = ContactsService()
     var gameController: GameController!
-    var contacts: [CNContact]!
 
+    @IBOutlet var nameToGuess: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let orgContacts = contactsService.getContacts(organizationName: "Omada Health")
         gameController = GameController(contacts: orgContacts)
-        contacts = gameController.randomContacts(count: 6)
+        gameController.nextRound()
+        nameToGuess.text = CNContactFormatter.string(from: gameController.correct, style: .fullName)
     }
 
     /*
@@ -66,12 +67,12 @@ extension FaceCollectionViewController: UICollectionViewDataSource {
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contacts.count
+        return gameController.choices.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FaceCollectionViewCell
-        cell.configure(with: contacts[indexPath.row])
+        cell.configure(with: gameController.choices[indexPath.row])
         return cell
     }
 }

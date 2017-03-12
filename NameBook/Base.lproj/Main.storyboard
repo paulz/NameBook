@@ -97,6 +97,9 @@
                             <constraint firstItem="Dz7-wI-i0e" firstAttribute="top" secondItem="EWQ-1K-MzC" secondAttribute="bottom" id="fm7-Qx-k7F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameToGuess" destination="4NA-du-JwY" id="7vn-XK-wur"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6s-zf-6hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
