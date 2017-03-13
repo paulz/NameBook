@@ -10,6 +10,10 @@ struct ContactsService {
         }
     }
 
+    func editContact(contact:CNContact) {
+        
+    }
+
     func getContacts(organizationName: String) -> [CNContact] {
         let stringKeys = [
             CNContactGivenNameKey,

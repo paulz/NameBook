@@ -17,6 +17,17 @@ class FaceCollectionViewController: UIViewController {
         play()
     }
 
+    @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
+        if (sender.state != UIGestureRecognizerState.ended){
+            return
+        }
+        let locationInView = sender.location(in: self.collectionView)
+
+        if let indexPath = collectionView.indexPathForItem(at: locationInView) {
+            contactsService.editContact(contact: gameController.choices[indexPath.row])
+        }
+    }
+
     func play()  {
         gameController.nextRound()
         collectionView.reloadData()

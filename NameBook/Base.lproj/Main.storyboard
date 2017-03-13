@@ -28,6 +28,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-ef-l4A">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ng2-dK-BUN">
                                             <size key="itemSize" width="164" height="163"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -72,6 +73,7 @@
                                         <connections>
                                             <outlet property="dataSource" destination="yDC-Pu-rCJ" id="eiM-Tr-UAL"/>
                                             <outlet property="delegate" destination="yDC-Pu-rCJ" id="70h-mp-ccE"/>
+                                            <outletCollection property="gestureRecognizers" destination="Yf6-cV-dE5" appends="YES" id="9ub-9h-vDU"/>
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Njd-k3-Cxk">
@@ -130,6 +132,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6s-zf-6hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Yf6-cV-dE5">
+                    <connections>
+                        <action selector="onLongPress:" destination="yDC-Pu-rCJ" id="gt8-q3-8ef"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-404" y="35.532233883058474"/>
         </scene>
