@@ -1,5 +1,6 @@
 import Foundation
 import Contacts
+import ContactsUI
 
 struct ContactsService {
     let contactStore = CNContactStore()
@@ -10,8 +11,15 @@ struct ContactsService {
         }
     }
 
-    func editContact(contact:CNContact) {
-        
+    func editContact(contact:CNContact) -> UIViewController? {
+        let descriptor = CNContactViewController.descriptorForRequiredKeys()
+        if let unified = try? contactStore.unifiedContact(withIdentifier: contact.identifier, keysToFetch: [descriptor]) {
+            let controller = CNContactViewController.init(for: unified)
+            controller.allowsEditing = true
+            return UINavigationController(rootViewController: controller)
+        } else {
+            return nil
+        }
     }
 
     func getContacts(organizationName: String) -> [CNContact] {

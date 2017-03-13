@@ -24,7 +24,9 @@ class FaceCollectionViewController: UIViewController {
         let locationInView = sender.location(in: self.collectionView)
 
         if let indexPath = collectionView.indexPathForItem(at: locationInView) {
-            contactsService.editContact(contact: gameController.choices[indexPath.row])
+            if let controller = contactsService.editContact(contact: gameController.choices[indexPath.row]) {
+                present(controller, animated: true, completion: nil)
+            }
         }
     }
 
