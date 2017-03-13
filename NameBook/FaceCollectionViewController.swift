@@ -9,6 +9,7 @@ class FaceCollectionViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var nameToGuess: UILabel!
+    @IBOutlet var fullNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         let orgContacts = contactsService.getContacts(organizationName: "Omada Health")
@@ -19,7 +20,15 @@ class FaceCollectionViewController: UIViewController {
     func play()  {
         gameController.nextRound()
         collectionView.reloadData()
-        nameToGuess.text = CNContactFormatter.string(from: gameController.correct, style: .fullName)
+        let nickname = gameController.correct.nickname
+        let fullName = CNContactFormatter.string(from: gameController.correct, style: .fullName)
+        if !nickname.isEmpty && nickname != gameController.correct.givenName {
+            nameToGuess.text = gameController.correct.nickname
+            fullNameLabel.text = fullName
+        } else {
+            nameToGuess.text = fullName
+            fullNameLabel.text = nil
+        }
     }
 
     /*

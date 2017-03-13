@@ -16,7 +16,8 @@ struct ContactsService {
             CNContactOrganizationNameKey,
             CNContactJobTitleKey,
             CNContactThumbnailImageDataKey,
-            CNContactImageDataAvailableKey
+            CNContactImageDataAvailableKey,
+            CNContactNicknameKey
         ]
         var keysToFetch: [CNKeyDescriptor] = [CNContact.descriptorForAllComparatorKeys()]
         keysToFetch.append(contentsOf: stringKeys as [CNKeyDescriptor])
