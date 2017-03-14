@@ -16,7 +16,7 @@ struct GameController {
 
     mutating func nextRound()  {
         choices = randomContacts(count: 6)
-        let selected = Int(arc4random()) % choices.count
+        let selected = Int(arc4random_uniform(UInt32(choices.count)))
         correct = choices[selected]
     }
 
@@ -27,7 +27,7 @@ struct GameController {
             if selection.count == 0 {
                 break
             }
-            let random = Int(arc4random()) % selection.count
+            let random = Int(arc4random_uniform(UInt32(selection.count)))
             let contact = selection[random]
             selection.remove(at: random)
             selected.append(contact)
