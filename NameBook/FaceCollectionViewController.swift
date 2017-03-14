@@ -17,13 +17,20 @@ class FaceCollectionViewController: UIViewController {
         play()
     }
 
+    func dismissContact() {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
         if (sender.state == UIGestureRecognizerState.began){
             let locationInView = sender.location(in: self.collectionView)
 
             if let indexPath = collectionView.indexPathForItem(at: locationInView) {
                 if let controller = contactsService.editContact(contact: gameController.choices[indexPath.row]) {
-                    present(controller, animated: true, completion: nil)
+                    controller.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                                                  target: self,
+                                                                                  action: #selector(dismissContact))
+                    present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
                 }
             }
         }

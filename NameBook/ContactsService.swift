@@ -16,7 +16,7 @@ struct ContactsService {
         if let unified = try? contactStore.unifiedContact(withIdentifier: contact.identifier, keysToFetch: [descriptor]) {
             let controller = CNContactViewController.init(for: unified)
             controller.allowsEditing = true
-            return UINavigationController(rootViewController: controller)
+            return controller
         } else {
             return nil
         }
