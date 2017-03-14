@@ -43,6 +43,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7A9-TO-iAO" userLabel="selected background">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="khp-hv-v1S">
                                                             <rect key="frame" x="13" y="13" width="124" height="124"/>
                                                         </imageView>
@@ -67,6 +72,7 @@
                                                 <connections>
                                                     <outlet property="photoView" destination="khp-hv-v1S" id="pVt-kE-ktv"/>
                                                     <outlet property="resultLabel" destination="QH1-Ch-NQb" id="WOm-ro-dFo"/>
+                                                    <outlet property="selectedBackgroundView" destination="7A9-TO-iAO" id="xQ0-oh-W1p"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
