@@ -12,7 +12,7 @@ class FaceCollectionViewController: UIViewController {
     @IBOutlet var fullNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let orgContacts = contactsService.getContacts(organizationName: "Omada Health")
+        let orgContacts = contactsService.getContacts(serviceName: "Namely")
         gameController = GameController(contacts: orgContacts)
         play()
     }

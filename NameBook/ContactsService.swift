@@ -22,26 +22,33 @@ struct ContactsService {
         }
     }
 
-    func getContacts(organizationName: String) -> [CNContact] {
+    func getContacts(serviceName: String) -> [CNContact] {
         let stringKeys = [
             CNContactGivenNameKey,
             CNContactOrganizationNameKey,
             CNContactJobTitleKey,
             CNContactThumbnailImageDataKey,
             CNContactImageDataAvailableKey,
-            CNContactNicknameKey
+            CNContactNicknameKey,
+            CNContactSocialProfilesKey
         ]
         var keysToFetch: [CNKeyDescriptor] = [CNContact.descriptorForAllComparatorKeys()]
         keysToFetch.append(contentsOf: stringKeys as [CNKeyDescriptor])
         let request = CNContactFetchRequest(keysToFetch: keysToFetch)
-        var contacts: [CNContact] = []
+        var contacts: Set<CNContact> = Set()
+        var organizationNames: [String] = []
         try? contactStore.enumerateContacts(with: request) { (contact, more) in
-            if contact.organizationName == organizationName {
-                print(contact)
-                contacts.append(contact)
+            if contact.socialProfiles.filter({ $0.value.service == serviceName }).count > 0 {
+                organizationNames.append(contact.organizationName)
+                contacts.insert(contact)
+            }
+        }
+        try? contactStore.enumerateContacts(with: request) { (contact, more) in
+            if organizationNames.contains(contact.organizationName) {
+                contacts.insert(contact)
             }
         }
         print(contacts.count)
-        return contacts
+        return Array(contacts)
     }
 }
