@@ -18,14 +18,13 @@ class FaceCollectionViewController: UIViewController {
     }
 
     @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
-        if (sender.state != UIGestureRecognizerState.ended){
-            return
-        }
-        let locationInView = sender.location(in: self.collectionView)
+        if (sender.state == UIGestureRecognizerState.began){
+            let locationInView = sender.location(in: self.collectionView)
 
-        if let indexPath = collectionView.indexPathForItem(at: locationInView) {
-            if let controller = contactsService.editContact(contact: gameController.choices[indexPath.row]) {
-                present(controller, animated: true, completion: nil)
+            if let indexPath = collectionView.indexPathForItem(at: locationInView) {
+                if let controller = contactsService.editContact(contact: gameController.choices[indexPath.row]) {
+                    present(controller, animated: true, completion: nil)
+                }
             }
         }
     }
