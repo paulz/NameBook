@@ -3,11 +3,14 @@ import Contacts
 
 struct GameController {
     let gameContacts: [CNContact]
+    var queueToPlay: [CNContact]
     var choices: [CNContact] = []
     var correct: CNContact!
 
     init(contacts: [CNContact]) {
         gameContacts = contacts
+        queueToPlay = gameContacts
+        queueToPlay.shuffle()
     }
 
     func isCorrect(selection:Int) -> Bool {

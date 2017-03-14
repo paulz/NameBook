@@ -18,6 +18,7 @@
 		4B3EF4891E75F7380005FAB9 /* FaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */; };
 		A1D9E925C3AFD9C297AB63B7 /* Pods_NameBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6419DD4ED4EE225F21CB9032 /* Pods_NameBookTests.framework */; };
 		D1B2443DA9411303D6D24E64 /* Pods_NameBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09437D84B165DA31FE973CB9 /* Pods_NameBook.framework */; };
+		D228B78F1E7899B000C6CAD8 /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		59E309289D3E2AB203FAE97E /* Pods-NameBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameBook/Pods-NameBook.release.xcconfig"; sourceTree = "<group>"; };
 		6419DD4ED4EE225F21CB9032 /* Pods_NameBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE15BEE51F7BE89A2CF34D97 /* Pods-NameBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NameBookTests/Pods-NameBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
 		E192D4A31D2C05B3A1406C47 /* Pods-NameBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameBookTests/Pods-NameBookTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */,
+				D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */,
 				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
 				4B3EF4841E75F3580005FAB9 /* GameController.swift */,
 				4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */,
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3EF4851E75F3580005FAB9 /* GameController.swift in Sources */,
+				D228B78F1E7899B000C6CAD8 /* Array+Shuffle.swift in Sources */,
 				4B3EF4871E75F5DD0005FAB9 /* FaceCollectionViewController.swift in Sources */,
 				4B3EF4891E75F7380005FAB9 /* FaceCollectionViewCell.swift in Sources */,
 				4B3EF4631E75E4640005FAB9 /* AppDelegate.swift in Sources */,
