@@ -1,13 +1,12 @@
 import Foundation
-import Contacts
 
 struct GameController {
-    let gameContacts: [CNContact]
-    var queueToPlay: [CNContact]
-    var choices: [CNContact] = []
-    var correct: CNContact!
+    let gameContacts: [String]
+    var queueToPlay: [String]
+    var choices: [String] = []
+    var correct: String!
 
-    init(contacts: [CNContact]) {
+    init(contacts: [String]) {
         gameContacts = contacts
         queueToPlay = gameContacts
         queueToPlay.shuffle()
@@ -23,9 +22,9 @@ struct GameController {
         correct = choices[selected]
     }
 
-    func randomContacts(count: Int) -> [CNContact] {
+    func randomContacts(count: Int) -> [String] {
         var selection = gameContacts
-        var selected: [CNContact] = []
+        var selected: [String] = []
         for _ in 1...count {
             if selection.count == 0 {
                 break

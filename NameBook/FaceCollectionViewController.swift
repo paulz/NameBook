@@ -18,7 +18,9 @@ class FaceCollectionViewController: UIViewController {
     }
 
     func dismissContact() {
-        presentedViewController?.dismiss(animated: true, completion: nil)
+        presentedViewController?.dismiss(animated: true, completion: {
+            self.collectionView.reloadData()
+        })
     }
 
     @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
@@ -26,7 +28,7 @@ class FaceCollectionViewController: UIViewController {
             let locationInView = sender.location(in: self.collectionView)
 
             if let indexPath = collectionView.indexPathForItem(at: locationInView) {
-                if let controller = contactsService.editContact(contact: gameController.choices[indexPath.row]) {
+                if let controller = contactsService.editContact(identifier: gameController.choices[indexPath.row]) {
                     controller.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                                                   target: self,
                                                                                   action: #selector(dismissContact))
@@ -39,10 +41,11 @@ class FaceCollectionViewController: UIViewController {
     func play()  {
         gameController.nextRound()
         collectionView.reloadData()
-        let nickname = gameController.correct.nickname
-        let fullName = CNContactFormatter.string(from: gameController.correct, style: .fullName)
-        if !nickname.isEmpty && nickname != gameController.correct.givenName {
-            nameToGuess.text = gameController.correct.nickname
+        let correct = contactsService.contact(identifier:gameController.correct)!
+        let nickname = correct.nickname
+        let fullName = CNContactFormatter.string(from: correct, style: .fullName)
+        if !nickname.isEmpty && nickname != correct.givenName {
+            nameToGuess.text = correct.nickname
             fullNameLabel.text = fullName
         } else {
             nameToGuess.text = fullName
@@ -116,7 +119,7 @@ extension FaceCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! FaceCollectionViewCell
-        cell.configure(with: gameController.choices[indexPath.row])
+        cell.configure(with: contactsService.contact(identifier: gameController.choices[indexPath.row])!)
         return cell
     }
 }

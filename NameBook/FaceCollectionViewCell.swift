@@ -3,6 +3,8 @@ import Contacts
 
 class FaceCollectionViewCell: UICollectionViewCell {
     @IBOutlet var photoView: UIImageView!
+    @IBOutlet var resultLabel: UILabel!
+
     func configure(with contact: CNContact) {
         resultLabel.alpha = 0
         if let imageData = contact.thumbnailImageData {
@@ -11,7 +13,6 @@ class FaceCollectionViewCell: UICollectionViewCell {
             photoView.image = nil
         }
     }
-    @IBOutlet var resultLabel: UILabel!
 
     func showResult(correct:Bool, onComplete:@escaping ()->Void) {
         resultLabel.alpha = 0

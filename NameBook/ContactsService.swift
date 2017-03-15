@@ -11,46 +11,47 @@ struct ContactsService {
         }
     }
 
-    func editContact(contact:CNContact) -> UIViewController? {
+    func contact(identifier:String) -> CNContact? {
         let descriptor = CNContactViewController.descriptorForRequiredKeys()
-        if let unified = try? contactStore.unifiedContact(withIdentifier: contact.identifier, keysToFetch: [descriptor]) {
+        return try? contactStore.unifiedContact(withIdentifier: identifier, keysToFetch: [descriptor])
+    }
+
+    func editContact(identifier:String) -> UIViewController? {
+        if let unified = contact(identifier: identifier) {
             let controller = CNContactViewController.init(for: unified)
             controller.allowsEditing = true
             return controller
-        } else {
-            return nil
         }
+        return nil
     }
 
-    func getContacts(serviceName: String) -> [CNContact] {
+    func getContacts(serviceName: String) -> [String] {
         let stringKeys = [
-            CNContactGivenNameKey,
             CNContactOrganizationNameKey,
-            CNContactJobTitleKey,
-            CNContactThumbnailImageDataKey,
             CNContactImageDataAvailableKey,
-            CNContactNicknameKey,
-            CNContactSocialProfilesKey
+            CNContactSocialProfilesKey,
+            CNContactTypeKey
         ]
-        var keysToFetch: [CNKeyDescriptor] = [CNContact.descriptorForAllComparatorKeys()]
-        keysToFetch.append(contentsOf: stringKeys as [CNKeyDescriptor])
-        let request = CNContactFetchRequest(keysToFetch: keysToFetch)
+        let request = CNContactFetchRequest(keysToFetch: stringKeys as [CNKeyDescriptor])
         var contacts: Set<CNContact> = Set()
         var organizationNames: Set<String> = Set()
-        try? contactStore.enumerateContacts(with: request) { (contact, more) in
+        try? contactStore.enumerateContacts(with: request) { (contact, _) in
             if contact.socialProfiles.contains(where: { $0.value.service == serviceName }),
+                contact.contactType == .person,
                 !contact.organizationName.isEmpty,
                 contact.imageDataAvailable {
                 organizationNames.insert(contact.organizationName)
                 contacts.insert(contact)
             }
         }
-        try? contactStore.enumerateContacts(with: request) { (contact, more) in
-            if organizationNames.contains(contact.organizationName) {
+        try? contactStore.enumerateContacts(with: request) { (contact, _) in
+            if organizationNames.contains(contact.organizationName),
+                contact.contactType == .person,
+                contact.imageDataAvailable {
                 contacts.insert(contact)
             }
         }
         print(contacts.count)
-        return Array(contacts)
+        return Array(contacts.map{$0.identifier})
     }
 }
