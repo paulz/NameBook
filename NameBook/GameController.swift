@@ -4,7 +4,7 @@ struct GameController {
     let gameContacts: [String]
     var queueToPlay: [String]
     var choices: [String] = []
-    var correct: String!
+    var correct: Int = -1
 
     init(contacts: [String]) {
         gameContacts = contacts
@@ -12,14 +12,17 @@ struct GameController {
         queueToPlay.shuffle()
     }
 
+    func correctChoice() -> String {
+        return choices[correct]
+    }
+
     func isCorrect(selection:Int) -> Bool {
-        return choices.index(of: correct) == selection
+        return correct == selection
     }
 
     mutating func nextRound()  {
         choices = randomContacts(count: 6)
-        let selected = Int(arc4random_uniform(UInt32(choices.count)))
-        correct = choices[selected]
+        correct = Int(arc4random_uniform(UInt32(choices.count)))
     }
 
     func randomContacts(count: Int) -> [String] {

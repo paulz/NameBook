@@ -41,7 +41,7 @@ class FaceCollectionViewController: UIViewController {
     func play()  {
         gameController.nextRound()
         collectionView.reloadData()
-        let correct = contactsService.contact(identifier:gameController.correct)!
+        let correct = contactsService.contact(identifier:gameController.correctChoice())!
         let nickname = correct.nickname
         let fullName = CNContactFormatter.string(from: correct, style: .fullName)
         if !nickname.isEmpty && nickname != correct.givenName {
