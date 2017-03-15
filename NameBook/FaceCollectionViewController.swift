@@ -53,47 +53,30 @@ class FaceCollectionViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    func dimIncorrect() {
+        for visible in collectionView.indexPathsForVisibleItems {
+            if visible.row != gameController.correct {
+                if let cell = collectionView.cellForItem(at: visible) {
+                    cell.contentView.alpha = 0
+                    cell.isHighlighted = false
+                }
+            }
+        }
     }
-    */
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func restoreDimmed() {
+        _ = collectionView.visibleCells.map{$0.contentView.alpha = 1}
     }
-    */
 
+    func flashCorrect(onComplete:@escaping ()->()) {
+        UIView.animate(withDuration: 1.25, animations: {
+            self.dimIncorrect()
+        }, completion: { _ in
+            RunLoop.current.run(until: Date(timeIntervalSinceNow: 1))
+            self.restoreDimmed()
+            onComplete()
+        })
+    }
 }
 
 extension FaceCollectionViewController: UICollectionViewDelegate {
@@ -101,8 +84,16 @@ extension FaceCollectionViewController: UICollectionViewDelegate {
         print(indexPath)
 
         let cell = collectionView.cellForItem(at: indexPath) as! FaceCollectionViewCell
-        cell.showResult(correct: gameController.isCorrect(selection: indexPath.row)) {
-            self.play()
+        let correct = gameController.isCorrect(selection: indexPath.row)
+        cell.showResult(correct: correct) {
+            if !correct {
+                collectionView.deselectItem(at: indexPath, animated: true)
+                self.flashCorrect {
+                    self.play()
+                }
+            } else {
+                self.play()
+            }
         }
     }
 }
