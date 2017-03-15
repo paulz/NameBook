@@ -19,7 +19,7 @@ struct ContactsService {
     func editContact(identifier:String) -> UIViewController? {
         if let unified = contact(identifier: identifier) {
             let controller = CNContactViewController.init(for: unified)
-            controller.allowsEditing = true
+            controller.shouldShowLinkedContacts = true
             return controller
         }
         return nil
