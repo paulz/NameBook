@@ -36,10 +36,12 @@ struct ContactsService {
         keysToFetch.append(contentsOf: stringKeys as [CNKeyDescriptor])
         let request = CNContactFetchRequest(keysToFetch: keysToFetch)
         var contacts: Set<CNContact> = Set()
-        var organizationNames: [String] = []
+        var organizationNames: Set<String> = Set()
         try? contactStore.enumerateContacts(with: request) { (contact, more) in
-            if contact.socialProfiles.filter({ $0.value.service == serviceName }).count > 0 {
-                organizationNames.append(contact.organizationName)
+            if contact.socialProfiles.contains(where: { $0.value.service == serviceName }),
+                !contact.organizationName.isEmpty,
+                contact.imageDataAvailable {
+                organizationNames.insert(contact.organizationName)
                 contacts.insert(contact)
             }
         }
