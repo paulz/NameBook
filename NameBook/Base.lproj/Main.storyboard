@@ -42,12 +42,12 @@
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="RGC-9v-ee8" id="KVs-Jc-van"/>
-                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="start game" animates="NO" action="showViewController:sender:" id="fGT-4o-j9v"/>
+                        <segue destination="DBD-IM-axA" kind="showDetail" identifier="start game" animates="NO" id="93W-hE-xhv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbU-75-ODm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1672.8" y="51.724137931034484"/>
+            <point key="canvasLocation" x="-2870" y="28"/>
         </scene>
         <!--Face Collection View Controller-->
         <scene sceneID="156-8n-5g8">
@@ -183,7 +183,55 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-407" y="52"/>
+            <point key="canvasLocation" x="-388" y="28"/>
+        </scene>
+        <!--Organization View Controller-->
+        <scene sceneID="Xyu-wT-03U">
+            <objects>
+                <viewController id="DBD-IM-axA" customClass="OrganizationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Aov-Xe-NjN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lva-5m-Y4N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F0v-61-PjF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AwZ-QQ-uq5">
+                                <rect key="frame" x="0.0" y="350" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DBD-IM-axA" id="R8f-AT-f25"/>
+                                    <outlet property="delegate" destination="DBD-IM-axA" id="BOs-bg-lk7"/>
+                                </connections>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="You can export a contact for Namely app: select a person, tap action, select Create New Contact" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
+                                <rect key="frame" x="69" y="205" width="240" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvP-ZZ-os9">
+                                <rect key="frame" x="124" y="134" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Install Namely app"/>
+                                <connections>
+                                    <action selector="showNamelyApp" destination="DBD-IM-axA" eventType="touchUpInside" id="UQq-13-SUF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="groupPickerView" destination="AwZ-QQ-uq5" id="Jck-v1-frI"/>
+                        <outlet property="namelyAppButton" destination="AvP-ZZ-os9" id="qi0-41-7i9"/>
+                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="start game" animates="NO" id="t00-Su-QVH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1572" y="29"/>
         </scene>
     </scenes>
 </document>
