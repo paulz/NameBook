@@ -5,6 +5,9 @@ class OrganizationViewController: UIViewController {
     @IBOutlet var namelyAppButton: UIButton!
     @IBOutlet var groupPickerView: UIPickerView!
     var application: UIApplication!
+    var contactsService: ContactsService!
+    var organizations: [String: Int] = [:]
+    var organizationNames: [String] = []
 
     @IBAction func showNamelyApp() {
         if isNamelyAppInstalled() {
@@ -33,6 +36,8 @@ class OrganizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         namelyAppButton.setTitle(isNamelyAppInstalled() ? "Open Namely app": "Install Namely app", for: .normal)
+        organizations = contactsService.organizations()
+        organizationNames = organizations.keys.sorted()
     }
 }
 
@@ -42,13 +47,13 @@ extension OrganizationViewController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return organizationNames.count
     }
 }
 
 extension OrganizationViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Namely"
+        return organizationNames[row]
     }
 }
 

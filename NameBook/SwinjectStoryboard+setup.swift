@@ -13,6 +13,7 @@ extension SwinjectStoryboard {
         }
         defaultContainer.storyboardInitCompleted(OrganizationViewController.self) { r, c in
             c.application = r.resolve(UIApplication.self)!
+            c.contactsService = r.resolve(ContactsService.self)!
         }
     }
 }

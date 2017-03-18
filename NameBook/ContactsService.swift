@@ -5,7 +5,6 @@ import ContactsUI
 struct ContactsService {
     let contactStore = CNContactStore()
 
-
     func contact(identifier:String) -> CNContact? {
         let descriptor = CNContactViewController.descriptorForRequiredKeys()
         return try? contactStore.unifiedContact(withIdentifier: identifier, keysToFetch: [descriptor])
@@ -18,6 +17,11 @@ struct ContactsService {
             return controller
         }
         return nil
+    }
+
+    func organizations() -> [String:Int] {
+        let organizations:[String:Int] = [:]
+        return organizations
     }
 
     func getContacts(serviceName: String) -> [String] {
