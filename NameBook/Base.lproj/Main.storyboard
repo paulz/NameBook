@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Allow Contacts"/>
                                 <connections>
-                                    <action selector="onButtonTap:" destination="nTS-iL-kcr" eventType="touchUpInside" id="OF8-wx-pea"/>
+                                    <action selector="onAllowContactsAccess" destination="nTS-iL-kcr" eventType="touchUpInside" id="20L-eK-zfj"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This app needs access to your contacts to show photos and names to help you memorize them." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Ts-LSB">
@@ -41,7 +41,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="actionButton" destination="RGC-9v-ee8" id="KVs-Jc-van"/>
                         <segue destination="DBD-IM-axA" kind="showDetail" identifier="start game" animates="NO" id="93W-hE-xhv"/>
                     </connections>
                 </viewController>

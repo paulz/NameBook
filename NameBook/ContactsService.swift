@@ -60,9 +60,11 @@ extension ContactsService {
         return [.denied, .restricted].contains(contactsAccess)
     }
 
-    func promptForAccess(onComplete:@escaping (Bool)->()) {
+    func promptForAccess(onComplete:@escaping ()->()) {
         contactStore.requestAccess(for: CNEntityType.contacts) { (success, error) in
-            onComplete(success)
+            DispatchQueue.main.async {
+                onComplete()
+            }
         }
     }
 

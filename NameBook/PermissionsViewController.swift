@@ -5,14 +5,12 @@ class PermissionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if contactsService.hasAccess {
-            moveOn()
-        }
+        proceedWhenGranted()
     }
 
-    func moveOn() {
-        DispatchQueue.main.async {
-            self.performSegue(withIdentifier: "start game", sender: self)
+    func proceedWhenGranted() {
+        if contactsService.hasAccess {
+            performSegue(withIdentifier: "start game", sender: self)
         }
     }
 
@@ -20,17 +18,11 @@ class PermissionViewController: UIViewController {
         UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
     }
 
-    @IBOutlet var actionButton: UIButton!
-
-    @IBAction func onButtonTap(_ sender: UIButton) {
+    @IBAction func onAllowContactsAccess() {
         if contactsService.isAccessDenied {
             openSettings()
         } else {
-            contactsService.promptForAccess { granted in
-                if granted {
-                    self.moveOn()
-                }
-            }
+            contactsService.promptForAccess(onComplete: proceedWhenGranted)
         }
     }
 }
