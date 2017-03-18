@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yDC-Pu-rCJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTS-iL-kcr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Permission View Controller-->
+        <scene sceneID="eIe-uv-ch9">
+            <objects>
+                <viewController id="nTS-iL-kcr" customClass="PermissionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="khe-8Z-piF"/>
+                        <viewControllerLayoutGuide type="bottom" id="qOm-jn-luC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6sv-4B-5LI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-9v-ee8">
+                                <rect key="frame" x="94" y="269" width="186" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Allow Contacts"/>
+                                <connections>
+                                    <action selector="onButtonTap:" destination="nTS-iL-kcr" eventType="touchUpInside" id="OF8-wx-pea"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This app needs access to your contacts to show photos and names to help you memorize them." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Ts-LSB">
+                                <rect key="frame" x="67" y="349" width="240" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="RGC-9v-ee8" id="KVs-Jc-van"/>
+                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="start game" animates="NO" action="showViewController:sender:" id="fGT-4o-j9v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbU-75-ODm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1672.8" y="51.724137931034484"/>
+        </scene>
         <!--Face Collection View Controller-->
         <scene sceneID="156-8n-5g8">
             <objects>
@@ -144,7 +183,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-404.34782608695656" y="34.399999999999999"/>
+            <point key="canvasLocation" x="-407" y="52"/>
         </scene>
     </scenes>
 </document>

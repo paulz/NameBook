@@ -5,11 +5,6 @@ import ContactsUI
 struct ContactsService {
     let contactStore = CNContactStore()
 
-    init() {
-        contactStore.requestAccess(for: CNEntityType.contacts) { (success, error) in
-            print(success)
-        }
-    }
 
     func contact(identifier:String) -> CNContact? {
         let descriptor = CNContactViewController.descriptorForRequiredKeys()
@@ -53,5 +48,25 @@ struct ContactsService {
         }
         print(contacts.count)
         return Array(contacts.map{$0.identifier})
+    }
+}
+
+extension ContactsService {
+    var hasAccess: Bool {
+        return contactsAccess == .authorized
+    }
+
+    var isAccessDenied: Bool {
+        return [.denied, .restricted].contains(contactsAccess)
+    }
+
+    func promptForAccess(onComplete:@escaping (Bool)->()) {
+        contactStore.requestAccess(for: CNEntityType.contacts) { (success, error) in
+            onComplete(success)
+        }
+    }
+
+    private var contactsAccess: CNAuthorizationStatus {
+        return CNContactStore.authorizationStatus(for: .contacts)
     }
 }
