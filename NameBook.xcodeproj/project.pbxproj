@@ -130,9 +130,9 @@
 		4BF152C91E7DDDB400676015 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
-				4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */,
 				4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */,
+				4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */,
+				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

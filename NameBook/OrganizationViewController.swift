@@ -4,6 +4,7 @@ import StoreKit
 class OrganizationViewController: UIViewController {
     @IBOutlet var namelyAppButton: UIButton!
     @IBOutlet var groupPickerView: UIPickerView!
+    var application: UIApplication!
 
     @IBAction func showNamelyApp() {
         if isNamelyAppInstalled() {
@@ -14,8 +15,7 @@ class OrganizationViewController: UIViewController {
     }
 
     func openNamelyApp() {
-        let namelyUrl = URL(string: "namely://profiles")!
-        return UIApplication.shared.open(namelyUrl)
+        return application.open(URL(string: "namely://profiles")!)
     }
 
     func openNamelyInAppStore() {
@@ -33,8 +33,7 @@ class OrganizationViewController: UIViewController {
     }
 
     func isNamelyAppInstalled() -> Bool {
-        let namelyUrl = URL(string: "namely://profiles")!
-        return UIApplication.shared.canOpenURL(namelyUrl)
+        return application.canOpenURL(URL(string: "namely://profiles")!)
     }
 
     override func viewDidLoad() {
