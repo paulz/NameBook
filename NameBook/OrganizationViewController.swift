@@ -39,6 +39,15 @@ class OrganizationViewController: UIViewController {
         organizations = contactsService.organizations()
         organizationNames = organizations.keys.sorted()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if organizationNames.count > 0 {
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "have enough contacts to play", sender: self)
+            }
+        }
+    }
 }
 
 extension OrganizationViewController: UIPickerViewDataSource {

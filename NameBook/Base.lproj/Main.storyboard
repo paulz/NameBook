@@ -41,7 +41,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="DBD-IM-axA" kind="showDetail" identifier="start game" animates="NO" id="93W-hE-xhv"/>
+                        <segue destination="DBD-IM-axA" kind="showDetail" identifier="can access contacts" animates="NO" id="93W-hE-xhv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbU-75-ODm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,7 +225,7 @@
                     <connections>
                         <outlet property="groupPickerView" destination="AwZ-QQ-uq5" id="Jck-v1-frI"/>
                         <outlet property="namelyAppButton" destination="AvP-ZZ-os9" id="qi0-41-7i9"/>
-                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="start game" animates="NO" id="t00-Su-QVH"/>
+                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="have enough contacts to play" animates="NO" id="t00-Su-QVH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
