@@ -20,16 +20,10 @@ class OrganizationViewController: UIViewController {
 
     func openNamelyInAppStore() {
         // https://itunes.apple.com/us/app/namely/id1053112477?mt=8
-        let vc: SKStoreProductViewController = SKStoreProductViewController()
-        let params = [
-            SKStoreProductParameterITunesItemIdentifier:1053112477,
-// TODO: Affiliate
-//            SKStoreProductParameterAffiliateToken:"",
-//            SKStoreProductParameterCampaignToken:""
-        ]
-        vc.delegate = self
-        vc.loadProduct(withParameters: params)
-        self.present(vc, animated: true)
+        let productController: SKStoreProductViewController = SKStoreProductViewController()
+        productController.delegate = self
+        productController.loadProduct(withParameters: [SKStoreProductParameterITunesItemIdentifier:1053112477])
+        self.present(productController, animated: true)
     }
 
     func isNamelyAppInstalled() -> Bool {
