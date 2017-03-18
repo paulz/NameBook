@@ -4,7 +4,7 @@ import Contacts
 private let reuseIdentifier = "face cell"
 
 class FaceCollectionViewController: UIViewController {
-    var contactsService: ContactsService = ContactsService()
+    var contactsService: ContactsService!
     var gameController: GameController!
 
     @IBOutlet var collectionView: UICollectionView!
