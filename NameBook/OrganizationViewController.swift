@@ -1,10 +1,30 @@
 import UIKit
+import StoreKit
 
 class OrganizationViewController: UIViewController {
     @IBOutlet var namelyAppButton: UIButton!
     @IBOutlet var groupPickerView: UIPickerView!
 
     @IBAction func showNamelyApp() {
+        if isNamelyAppInstalled() {
+            // open namely
+        } else {
+            openNamelyInAppStore()
+        }
+    }
+
+    func openNamelyInAppStore() {
+        // https://itunes.apple.com/us/app/namely/id1053112477?mt=8
+        let vc: SKStoreProductViewController = SKStoreProductViewController()
+        let params = [
+            SKStoreProductParameterITunesItemIdentifier:1053112477,
+// TODO: Affiliate
+//            SKStoreProductParameterAffiliateToken:"",
+//            SKStoreProductParameterCampaignToken:""
+        ]
+        vc.delegate = self
+        vc.loadProduct(withParameters: params)
+        self.present(vc, animated: true)
     }
 
     func isNamelyAppInstalled() -> Bool {
@@ -30,5 +50,11 @@ extension OrganizationViewController: UIPickerViewDataSource {
 extension OrganizationViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return "Namely"
+    }
+}
+
+extension OrganizationViewController: SKStoreProductViewControllerDelegate {
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        dismiss(animated: true)
     }
 }

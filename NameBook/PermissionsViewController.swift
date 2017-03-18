@@ -17,8 +17,7 @@ class PermissionViewController: UIViewController {
     }
 
     func openSettings() {
-        let settingsUrl = NSURL(string:UIApplicationOpenSettingsURLString) as! URL
-        UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
     }
 
     @IBOutlet var actionButton: UIButton!

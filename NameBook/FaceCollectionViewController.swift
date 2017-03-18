@@ -32,7 +32,7 @@ class FaceCollectionViewController: UIViewController {
                     controller.navigationItem.backBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                                                   target: self,
                                                                                   action: #selector(dismissContact))
-                    present(UINavigationController(rootViewController: controller), animated: true, completion: nil)
+                    present(UINavigationController(rootViewController: controller), animated: true)
                 }
             }
         }
