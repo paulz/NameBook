@@ -7,10 +7,15 @@ class OrganizationViewController: UIViewController {
 
     @IBAction func showNamelyApp() {
         if isNamelyAppInstalled() {
-            // open namely
+            openNamelyApp()
         } else {
             openNamelyInAppStore()
         }
+    }
+
+    func openNamelyApp() {
+        let namelyUrl = URL(string: "namely://profiles")!
+        return UIApplication.shared.open(namelyUrl)
     }
 
     func openNamelyInAppStore() {
@@ -28,7 +33,8 @@ class OrganizationViewController: UIViewController {
     }
 
     func isNamelyAppInstalled() -> Bool {
-        return false
+        let namelyUrl = URL(string: "namely://profiles")!
+        return UIApplication.shared.canOpenURL(namelyUrl)
     }
 
     override func viewDidLoad() {

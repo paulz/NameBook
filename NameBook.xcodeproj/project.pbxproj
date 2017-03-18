@@ -104,13 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */,
-				D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */,
-				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
-				4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */,
-				4B3EF4841E75F3580005FAB9 /* GameController.swift */,
-				4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */,
+				4BF152C91E7DDDB400676015 /* Controllers */,
 				4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */,
 				4B3EF4821E75E8820005FAB9 /* ContactsService.swift */,
+				4B3EF4841E75F3580005FAB9 /* GameController.swift */,
+				D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */,
 				4BC12A5A1E7CFDFC00D1FFFE /* SwinjectStoryboard+setup.swift */,
 				4B3EF4661E75E4650005FAB9 /* Main.storyboard */,
 				4B3EF4691E75E4650005FAB9 /* Assets.xcassets */,
@@ -127,6 +125,16 @@
 				4B3EF4791E75E4650005FAB9 /* Info.plist */,
 			);
 			path = NameBookTests;
+			sourceTree = "<group>";
+		};
+		4BF152C91E7DDDB400676015 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
+				4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */,
+				4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		CB1639A4487E7E3B3B143603 /* Pods */ = {
