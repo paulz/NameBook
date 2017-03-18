@@ -20,7 +20,23 @@ struct ContactsService {
     }
 
     func organizations() -> [String:Int] {
-        let organizations:[String:Int] = [:]
+        var organizations:[String:Int] = [:]
+        let stringKeys = [
+            CNContactOrganizationNameKey,
+            CNContactImageDataAvailableKey,
+            CNContactSocialProfilesKey,
+            CNContactTypeKey
+        ]
+        let request = CNContactFetchRequest(keysToFetch: stringKeys as [CNKeyDescriptor])
+        try? contactStore.enumerateContacts(with: request) { (contact, _) in
+            if contact.contactType == .person {
+                let organization = contact.organizationName
+                if !organization.isEmpty {
+                    let count = organizations[organization] ?? 0
+                    organizations[organization] = count + 1
+                }
+            }
+        }
         return organizations
     }
 
