@@ -195,6 +195,7 @@
 				TargetAttributes = {
 					4B3EF45E1E75E4640005FAB9 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 35KC7LV9BL;
 						ProvisioningStyle = Automatic;
 					};
 					4B3EF4721E75E4650005FAB9 = {
@@ -485,7 +486,7 @@
 			baseConfigurationReference = 2FA45A11627D24BEC7892F4C /* Pods-NameBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = NameBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.paulz.NameBook;
@@ -499,7 +500,7 @@
 			baseConfigurationReference = 59E309289D3E2AB203FAE97E /* Pods-NameBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = NameBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.paulz.NameBook;
