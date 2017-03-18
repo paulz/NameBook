@@ -10,7 +10,9 @@ class PermissionViewController: UIViewController {
 
     func proceedWhenGranted() {
         if contactsService.hasAccess {
-            performSegue(withIdentifier: "start game", sender: self)
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "start game", sender: self)
+            }
         }
     }
 

@@ -62,9 +62,7 @@ extension ContactsService {
 
     func promptForAccess(onComplete:@escaping ()->()) {
         contactStore.requestAccess(for: CNEntityType.contacts) { (success, error) in
-            DispatchQueue.main.async {
-                onComplete()
-            }
+            onComplete()
         }
     }
 
