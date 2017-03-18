@@ -37,7 +37,14 @@ struct ContactsService {
                 }
             }
         }
-        return organizations
+        let tuples = organizations.filter { name, count in
+            return count > 6
+        }
+        var result:[String:Int] = [:]
+        tuples.forEach { name, count in
+            result[name] = count
+        }
+        return result
     }
 
     func getContacts(serviceName: String) -> [String] {
