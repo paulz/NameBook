@@ -87,6 +87,15 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Swinject/Swinject.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwinjectStoryboard/SwinjectStoryboard.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/Swinject/Swinject.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SwinjectStoryboard/SwinjectStoryboard.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
