@@ -1,22 +1,24 @@
 import UIKit
 
-class NavigationViewController: UINavigationController {
-    var navigationBarTitleTextAttributes: [String : Any]?
+class RotatingNavigationViewController: UINavigationController {
+    var storyboardTextAttributes: [String : Any]?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        navigationBarTitleTextAttributes = navigationBar.titleTextAttributes
+        storyboardTextAttributes = navigationBar.titleTextAttributes
     }
 
     override func willTransition(to newCollection: UITraitCollection,
                                  with coordinator: UIViewControllerTransitionCoordinator) {
         let isVertical = newCollection.verticalSizeClass == .regular
-        setCustomTitleAttributes(isVertical)
+        useStoryboardTitleAttributes(isVertical)
         hidePromptInTransition(with: coordinator)
     }
+}
 
-    func setCustomTitleAttributes(_ custom:Bool) {
-        navigationBar.titleTextAttributes = custom ? navigationBarTitleTextAttributes : [:]
+extension RotatingNavigationViewController {
+    func useStoryboardTitleAttributes(_ custom:Bool) {
+        navigationBar.titleTextAttributes = custom ? storyboardTextAttributes : [:]
     }
 
     func hidePromptInTransition(with coordinator: UIViewControllerTransitionCoordinator) {

@@ -18,5 +18,6 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(LearnCollectionViewController.self) { r, c in
             c.contactsService = r.resolve(ContactsService.self)!
         }
+        defaultContainer.storyboardInitCompleted(RotatingNavigationViewController.self) {_ in}
     }
 }

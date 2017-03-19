@@ -321,10 +321,10 @@ Add to Contacts some people from Namely app:
             </objects>
             <point key="canvasLocation" x="-1991.2" y="-321.58920539730138"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Rotating Navigation View Controller-->
         <scene sceneID="Qrv-wp-qWX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gR-8u-2jU" customClass="NavigationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gR-8u-2jU" customClass="RotatingNavigationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
