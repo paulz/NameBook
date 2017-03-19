@@ -15,8 +15,15 @@ class LearnCollectionViewController: UICollectionViewController {
 
     private func fitWithoutScroll() {
         if let flow = collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {
-            let minSize = min(collectionView!.bounds.width, collectionView!.bounds.height) / 2
-            let optimal = CGSize(width: minSize, height: minSize)
+            let widthMax = collectionView!.bounds.width / 2
+            let heightMax = collectionView!.bounds.height / 2
+            let heightOptimal = widthMax * 3 / 2
+            var optimal: CGSize
+            if heightOptimal > heightMax {
+                optimal = CGSize(width: heightMax / 3 * 2, height: heightMax)
+            } else {
+                optimal = CGSize(width: widthMax, height: heightOptimal)
+            }
             if flow.itemSize != optimal {
                 flow.itemSize = optimal
                 flow.invalidateLayout()
