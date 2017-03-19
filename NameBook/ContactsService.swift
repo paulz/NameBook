@@ -82,7 +82,7 @@ struct ContactsService {
                 contacts.insert(contact)
             }
         }
-        print(contacts.count)
+        NSLog("found \(contacts.count) \(serviceName) contacts")
         return Array(contacts.map{$0.identifier})
     }
 }

@@ -137,7 +137,7 @@
                     <navigationItem key="navigationItem" title="Nickname" prompt="Full name" id="44L-5H-Hcg"/>
                     <connections>
                         <outlet property="collectionView" destination="CpM-ef-l4A" id="iNf-9n-3P8"/>
-                        <segue destination="x6y-nT-aw8" kind="show" identifier="show all contacts" id="Mm6-QJ-JyZ"/>
+                        <segue destination="w1p-zJ-wzU" kind="presentation" identifier="show all contacts" id="Mm6-QJ-JyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6s-zf-6hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,7 +154,7 @@
             <objects>
                 <collectionViewController id="x6y-nT-aw8" customClass="LearnCollectionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m9V-WJ-bgm">
-                        <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -207,16 +207,23 @@
                             <outletCollection property="gestureRecognizers" destination="udd-9E-i6H" appends="YES" id="P9F-cB-ROl"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Everybody" prompt="     " id="0gK-Ya-6lv"/>
+                    <navigationItem key="navigationItem" title="Everybody" id="0gK-Ya-6lv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="f6t-FI-veG">
+                            <connections>
+                                <segue destination="wPN-1j-AoF" kind="unwind" unwindAction="unwindWithSegue:" id="nfX-74-9kB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HT-aV-6G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wPN-1j-AoF" userLabel="Exit" sceneMemberID="exit"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="udd-9E-i6H">
                     <connections>
                         <action selector="onLongPress:" destination="x6y-nT-aw8" id="Ob4-9r-Uvv"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1604" y="-322"/>
+            <point key="canvasLocation" x="2543.1999999999998" y="-322.48875562218893"/>
         </scene>
         <!--Organization View Controller-->
         <scene sceneID="Xyu-wT-03U">
@@ -366,6 +373,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2E-I1-eef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-943.20000000000005" y="-320.68965517241384"/>
+        </scene>
+        <!--Rotating Navigation View Controller-->
+        <scene sceneID="0y0-NO-Jhv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w1p-zJ-wzU" customClass="RotatingNavigationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ubh-p2-2V0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="x6y-nT-aw8" kind="relationship" relationship="rootViewController" id="f3B-Ew-bPf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t93-EC-rNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="-322.48875562218893"/>
         </scene>
     </scenes>
     <resources>

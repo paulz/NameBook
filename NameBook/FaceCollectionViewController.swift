@@ -42,6 +42,8 @@ class FaceCollectionViewController: UIViewController {
         })
     }
 
+    @IBAction func unwind(segue: UIStoryboardSegue) {}
+
     @IBAction func onLongPress(_ sender: UILongPressGestureRecognizer) {
         if (sender.state == UIGestureRecognizerState.began){
             let locationInView = sender.location(in: self.collectionView)
@@ -100,8 +102,6 @@ class FaceCollectionViewController: UIViewController {
 
 extension FaceCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-
         let cell = collectionView.cellForItem(at: indexPath) as! FaceCollectionViewCell
         let correct = gameController.isCorrect(selection: indexPath.row)
         cell.showResult(correct: correct) {
