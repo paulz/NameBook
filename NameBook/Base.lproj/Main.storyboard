@@ -140,7 +140,7 @@
             </objects>
             <point key="canvasLocation" x="1114" y="-320"/>
         </scene>
-        <!--All Contacts-->
+        <!--Contacts from Namely-->
         <scene sceneID="FO9-MO-Xre">
             <objects>
                 <collectionViewController id="x6y-nT-aw8" customClass="LearnCollectionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -148,6 +148,7 @@
                         <rect key="frame" x="0.0" y="94" width="375" height="573"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Y8v-cA-z8D">
                             <size key="itemSize" width="165" height="231"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -194,9 +195,10 @@
                         <connections>
                             <outlet property="dataSource" destination="x6y-nT-aw8" id="pmF-Yv-c6J"/>
                             <outlet property="delegate" destination="x6y-nT-aw8" id="FUJ-7k-JXb"/>
+                            <outletCollection property="gestureRecognizers" destination="udd-9E-i6H" appends="YES" id="P9F-cB-ROl"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="All Contacts" prompt="remember the names" id="0gK-Ya-6lv">
+                    <navigationItem key="navigationItem" title="Contacts from Namely" prompt="     " id="0gK-Ya-6lv">
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="lGV-Gh-uZD">
                             <connections>
                                 <segue destination="yDC-Pu-rCJ" kind="show" id="2Xy-Lu-Cad"/>
@@ -205,6 +207,11 @@
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HT-aV-6G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="udd-9E-i6H">
+                    <connections>
+                        <action selector="onLongPress:" destination="x6y-nT-aw8" id="Ob4-9r-Uvv"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="120.8" y="-321.58920539730138"/>
         </scene>
@@ -314,10 +321,10 @@ Add to Contacts some people from Namely app:
             </objects>
             <point key="canvasLocation" x="-1991.2" y="-321.58920539730138"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="Qrv-wp-qWX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gR-8u-2jU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gR-8u-2jU" customClass="NavigationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
