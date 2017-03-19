@@ -129,6 +129,7 @@
                     <navigationItem key="navigationItem" title="Nickname" prompt="Full name" id="44L-5H-Hcg"/>
                     <connections>
                         <outlet property="collectionView" destination="CpM-ef-l4A" id="iNf-9n-3P8"/>
+                        <segue destination="x6y-nT-aw8" kind="show" identifier="show all contacts" id="Mm6-QJ-JyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6s-zf-6hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,9 +139,9 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1114" y="-320"/>
+            <point key="canvasLocation" x="378" y="-321"/>
         </scene>
-        <!--Contacts from Namely-->
+        <!--Everybody-->
         <scene sceneID="FO9-MO-Xre">
             <objects>
                 <collectionViewController id="x6y-nT-aw8" customClass="LearnCollectionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -198,13 +199,7 @@
                             <outletCollection property="gestureRecognizers" destination="udd-9E-i6H" appends="YES" id="P9F-cB-ROl"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Contacts from Namely" prompt="     " id="0gK-Ya-6lv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="lGV-Gh-uZD">
-                            <connections>
-                                <segue destination="yDC-Pu-rCJ" kind="show" id="2Xy-Lu-Cad"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Everybody" prompt="     " id="0gK-Ya-6lv"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HT-aV-6G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="udd-9E-i6H">
@@ -213,7 +208,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="120.8" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="1604" y="-322"/>
         </scene>
         <!--Organization View Controller-->
         <scene sceneID="Xyu-wT-03U">
@@ -337,7 +332,7 @@ Add to Contacts some people from Namely app:
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="x6y-nT-aw8" kind="relationship" relationship="rootViewController" id="RgS-ez-xMY"/>
+                        <segue destination="yDC-Pu-rCJ" kind="relationship" relationship="rootViewController" id="eae-y0-Q7n"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2E-I1-eef" userLabel="First Responder" sceneMemberID="firstResponder"/>

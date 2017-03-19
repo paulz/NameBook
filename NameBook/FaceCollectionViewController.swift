@@ -133,3 +133,12 @@ extension FaceCollectionViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
+extension FaceCollectionViewController {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            performSegue(withIdentifier: "show all contacts", sender: self)
+        }
+    }
+}
