@@ -143,6 +143,7 @@
         <!--Organization View Controller-->
         <scene sceneID="Xyu-wT-03U">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DBD-IM-axA" customClass="OrganizationViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aov-Xe-NjN"/>
@@ -242,7 +243,6 @@ Add to Contacts some people from Namely app:
                         <segue destination="5gR-8u-2jU" kind="custom" identifier="have enough contacts to play" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" id="dVu-re-AdD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1991.2" y="-321.58920539730138"/>
         </scene>
@@ -253,9 +253,12 @@ Add to Contacts some people from Namely app:
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xs1-I8-m9L">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="xs1-I8-m9L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
