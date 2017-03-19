@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B22C01E1E7E7A7700C26CCA /* LearnCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22C01D1E7E7A7700C26CCA /* LearnCollectionViewController.swift */; };
+		4B22C0201E7E7BB200C26CCA /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22C01F1E7E7BB200C26CCA /* ContactCollectionViewCell.swift */; };
 		4B3EF4631E75E4640005FAB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */; };
 		4B3EF4681E75E4650005FAB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B3EF4661E75E4650005FAB9 /* Main.storyboard */; };
 		4B3EF46A1E75E4650005FAB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B3EF4691E75E4650005FAB9 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		09437D84B165DA31FE973CB9 /* Pods_NameBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NameBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA45A11627D24BEC7892F4C /* Pods-NameBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NameBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NameBook/Pods-NameBook.debug.xcconfig"; sourceTree = "<group>"; };
+		4B22C01D1E7E7A7700C26CCA /* LearnCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnCollectionViewController.swift; sourceTree = "<group>"; };
+		4B22C01F1E7E7BB200C26CCA /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B3EF45F1E75E4640005FAB9 /* NameBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NameBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B3EF4671E75E4650005FAB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				4B3EF4621E75E4640005FAB9 /* AppDelegate.swift */,
 				4BF152C91E7DDDB400676015 /* Controllers */,
 				4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */,
+				4B22C01F1E7E7BB200C26CCA /* ContactCollectionViewCell.swift */,
 				4B3EF4821E75E8820005FAB9 /* ContactsService.swift */,
 				4B3EF4841E75F3580005FAB9 /* GameController.swift */,
 				D228B78E1E7899B000C6CAD8 /* Array+Shuffle.swift */,
@@ -135,6 +140,7 @@
 			children = (
 				4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */,
 				4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */,
+				4B22C01D1E7E7A7700C26CCA /* LearnCollectionViewController.swift */,
 				4B3EF4861E75F5DD0005FAB9 /* FaceCollectionViewController.swift */,
 			);
 			name = Controllers;
@@ -364,9 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3EF4851E75F3580005FAB9 /* GameController.swift in Sources */,
+				4B22C01E1E7E7A7700C26CCA /* LearnCollectionViewController.swift in Sources */,
 				D228B78F1E7899B000C6CAD8 /* Array+Shuffle.swift in Sources */,
 				4B3EF4871E75F5DD0005FAB9 /* FaceCollectionViewController.swift in Sources */,
 				4B3EF4891E75F7380005FAB9 /* FaceCollectionViewCell.swift in Sources */,
+				4B22C0201E7E7BB200C26CCA /* ContactCollectionViewCell.swift in Sources */,
 				4BF152C81E7DD5CC00676015 /* OrganizationViewController.swift in Sources */,
 				4B3EF4631E75E4640005FAB9 /* AppDelegate.swift in Sources */,
 				4BC12A5D1E7DCB4900D1FFFE /* PermissionsViewController.swift in Sources */,

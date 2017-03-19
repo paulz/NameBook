@@ -64,7 +64,7 @@ class FaceCollectionViewController: UIViewController {
         let nickname = correct.nickname
         let fullName = CNContactFormatter.string(from: correct, style: .fullName)
         if !nickname.isEmpty && nickname != correct.givenName {
-            navigationItem.title = correct.nickname
+            navigationItem.title = nickname
             navigationItem.prompt = fullName
         } else {
             navigationItem.title = fullName

@@ -15,5 +15,8 @@ extension SwinjectStoryboard {
             c.application = r.resolve(UIApplication.self)!
             c.contactsService = r.resolve(ContactsService.self)!
         }
+        defaultContainer.storyboardInitCompleted(LearnCollectionViewController.self) { r, c in
+            c.contactsService = r.resolve(ContactsService.self)!
+        }
     }
 }

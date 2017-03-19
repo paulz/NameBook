@@ -138,7 +138,74 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="1114" y="-320"/>
+        </scene>
+        <!--Learn Collection View Controller-->
+        <scene sceneID="FO9-MO-Xre">
+            <objects>
+                <collectionViewController id="x6y-nT-aw8" customClass="LearnCollectionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m9V-WJ-bgm">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Y8v-cA-z8D">
+                            <size key="itemSize" width="168" height="226"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contact cell" id="JJC-xh-jsp" customClass="ContactCollectionViewCell" customModule="NameBook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="168" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="168" height="226"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0BO-gz-XfV">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="249"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MYI-dK-XJa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="182"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R88-v2-Ars">
+                                                    <rect key="frame" x="0.0" y="182" width="168" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="0BO-gz-XfV" firstAttribute="leading" secondItem="JJC-xh-jsp" secondAttribute="leading" id="CjM-50-qxX"/>
+                                    <constraint firstItem="0BO-gz-XfV" firstAttribute="top" secondItem="JJC-xh-jsp" secondAttribute="top" id="D6u-gY-bG2"/>
+                                    <constraint firstAttribute="trailing" secondItem="0BO-gz-XfV" secondAttribute="trailing" id="NAQ-Xi-KOq"/>
+                                    <constraint firstAttribute="bottom" secondItem="0BO-gz-XfV" secondAttribute="bottom" id="ljA-xP-eGu"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nameLabel" destination="R88-v2-Ars" id="sUc-yT-ZSU"/>
+                                    <outlet property="photoView" destination="MYI-dK-XJa" id="EoV-SK-9m7"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="x6y-nT-aw8" id="pmF-Yv-c6J"/>
+                            <outlet property="delegate" destination="x6y-nT-aw8" id="FUJ-7k-JXb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="0gK-Ya-6lv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="lGV-Gh-uZD">
+                            <connections>
+                                <segue destination="yDC-Pu-rCJ" kind="show" id="2Xy-Lu-Cad"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2HT-aV-6G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="120.8" y="-321.58920539730138"/>
         </scene>
         <!--Organization View Controller-->
         <scene sceneID="Xyu-wT-03U">
@@ -262,7 +329,7 @@ Add to Contacts some people from Namely app:
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="yDC-Pu-rCJ" kind="relationship" relationship="rootViewController" id="HQZ-ja-WBn"/>
+                        <segue destination="x6y-nT-aw8" kind="relationship" relationship="rootViewController" id="RgS-ez-xMY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2E-I1-eef" userLabel="First Responder" sceneMemberID="firstResponder"/>
