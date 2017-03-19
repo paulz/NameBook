@@ -7,8 +7,6 @@ class OrganizationViewController: UIViewController {
 
     var application: UIApplication!
     var contactsService: ContactsService!
-    var organizations: [String: Int] = [:]
-    var organizationNames: [String] = []
 
     @IBAction func showNamelyApp() {
         if isNamelyAppInstalled() {
@@ -37,13 +35,12 @@ class OrganizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         namelyAppButton.setTitle(isNamelyAppInstalled() ? "Open Namely app": "Install Namely app", for: .normal)
-        organizations = contactsService.organizations()
-        organizationNames = organizations.keys.sorted()
+        checkCountAndMoveOn()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if organizationNames.count > 0 {
+    func checkCountAndMoveOn() {
+        let namelyContacts = contactsService.getContacts(serviceName: "Namely")
+        if namelyContacts.count > 5 {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "have enough contacts to play", sender: self)
             }
