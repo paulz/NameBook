@@ -41,12 +41,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="DBD-IM-axA" kind="showDetail" identifier="can access contacts" animates="NO" id="93W-hE-xhv"/>
+                        <segue destination="DBD-IM-axA" kind="custom" identifier="can access contacts" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" animates="NO" id="93W-hE-xhv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbU-75-ODm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2870" y="28"/>
+            <point key="canvasLocation" x="-2975" y="-319"/>
         </scene>
         <!--Face Collection View Controller-->
         <scene sceneID="156-8n-5g8">
@@ -61,10 +61,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-1K-MzC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-ef-l4A">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="577"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="533"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ng2-dK-BUN">
@@ -121,7 +121,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Njd-k3-Cxk">
-                                        <rect key="frame" x="0.0" y="577" width="375" height="70"/>
+                                        <rect key="frame" x="0.0" y="533" width="375" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xBS-1L-c1s">
                                                 <rect key="frame" x="8" y="8" width="359" height="61"/>
@@ -182,7 +182,55 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-388" y="28"/>
+            <point key="canvasLocation" x="935" y="-320"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="4Bb-my-934">
+            <objects>
+                <tableViewController id="ahc-cx-Gix" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iXi-jT-G4z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ziX-Pm-lcQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ziX-Pm-lcQ" id="snX-L0-cbf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yDC-Pu-rCJ" kind="show" id="Wsw-50-6kg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ahc-cx-Gix" id="Xs2-2g-1ZQ"/>
+                            <outlet property="delegate" destination="ahc-cx-Gix" id="cqf-pC-9ui"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="skQ-ck-16b"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGE-L7-s3J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="-319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XKM-nB-al9">
+            <objects>
+                <navigationController id="utX-ei-RIl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="71V-bN-qVB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ahc-cx-Gix" kind="relationship" relationship="rootViewController" id="X3d-K9-J3p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZx-t7-FDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-993" y="-319"/>
         </scene>
         <!--Organization View Controller-->
         <scene sceneID="Xyu-wT-03U">
@@ -225,12 +273,12 @@
                     <connections>
                         <outlet property="groupPickerView" destination="AwZ-QQ-uq5" id="Jck-v1-frI"/>
                         <outlet property="namelyAppButton" destination="AvP-ZZ-os9" id="qi0-41-7i9"/>
-                        <segue destination="yDC-Pu-rCJ" kind="showDetail" identifier="have enough contacts to play" animates="NO" id="t00-Su-QVH"/>
+                        <segue destination="utX-ei-RIl" kind="custom" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" id="e4B-RZ-FtH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1572" y="29"/>
+            <point key="canvasLocation" x="-1990" y="-321"/>
         </scene>
     </scenes>
 </document>
