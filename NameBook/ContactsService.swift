@@ -11,8 +11,11 @@ struct ContactsService {
     }
 
     func onChange(_ block: @escaping ()->()) {
-        NotificationCenter.default.addObserver(forName: .CNContactStoreDidChange, object: nil, queue: nil) { _ in
+        let center = NotificationCenter.default
+        var token: NSObjectProtocol?
+        token = center.addObserver(forName: .CNContactStoreDidChange, object: nil, queue: nil) { _ in
             block()
+            center.removeObserver(token!)
         }
     }
 

@@ -37,14 +37,10 @@ class OrganizationViewController: UIViewController {
         super.viewDidLoad()
         warningLabelTemplate = notEnoughContactsLabel.text
         namelyAppButton.setTitle(isNamelyAppInstalled() ? "Open Namely app": "Install Namely app", for: .normal)
-        if !checkCountAndMoveOn() {
-            contactsService.onChange {
-                _ = self.checkCountAndMoveOn()
-            }
-        }
+        checkCountAndMoveOn()
     }
 
-    func checkCountAndMoveOn() -> Bool {
+    func checkCountAndMoveOn() {
         let namelyContacts = contactsService.getContacts(serviceName: "Namely")
         let enoughToPlay = namelyContacts.count > 5
         if enoughToPlay {
@@ -53,8 +49,10 @@ class OrganizationViewController: UIViewController {
             }
         } else {
             notEnoughContactsLabel.text = warningLabelTemplate.replacingOccurrences(of: "0", with: "\(namelyContacts.count)")
+            contactsService.onChange {
+                self.checkCountAndMoveOn()
+            }
         }
-        return enoughToPlay
     }
 }
 
