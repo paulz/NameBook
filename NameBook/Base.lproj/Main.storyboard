@@ -223,14 +223,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
-                                <rect key="frame" x="69" y="205" width="255" height="184"/>
+                                <rect key="frame" x="69" y="276" width="255" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">To help you remember names of people from your company.
-
-Add to Contacts some people from Namely app:
+                                        <string key="content">Add some people from Namely app:
 </string>
                                         <attributes>
                                             <font key="NSFont" size="15" name="HelveticaNeue"/>
@@ -293,7 +291,7 @@ Add to Contacts some people from Namely app:
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvP-ZZ-os9">
-                                <rect key="frame" x="124" y="134" width="126" height="30"/>
+                                <rect key="frame" x="124" y="186" width="126" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Install Namely app"/>
                                 <connections>
@@ -304,11 +302,19 @@ Add to Contacts some people from Namely app:
                                 <rect key="frame" x="-7" y="423" width="392" height="454"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have 0 contacts from Namely app. And you need a dozen to make this game interesting." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-cx-GFv">
+                                <rect key="frame" x="16" y="102" width="343" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="namelyAppButton" destination="AvP-ZZ-os9" id="qi0-41-7i9"/>
+                        <outlet property="notEnoughContactsLabel" destination="6zH-cx-GFv" id="XFG-Ir-gmC"/>
                         <segue destination="5gR-8u-2jU" kind="custom" identifier="have enough contacts to play" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" id="dVu-re-AdD"/>
                     </connections>
                 </viewController>

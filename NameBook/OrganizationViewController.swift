@@ -3,7 +3,8 @@ import StoreKit
 
 class OrganizationViewController: UIViewController {
     @IBOutlet var namelyAppButton: UIButton!
-    @IBOutlet var groupPickerView: UIPickerView!
+    @IBOutlet var notEnoughContactsLabel: UILabel!
+
     var application: UIApplication!
     var contactsService: ContactsService!
     var organizations: [String: Int] = [:]
@@ -47,22 +48,6 @@ class OrganizationViewController: UIViewController {
                 self.performSegue(withIdentifier: "have enough contacts to play", sender: self)
             }
         }
-    }
-}
-
-extension OrganizationViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return organizationNames.count
-    }
-}
-
-extension OrganizationViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return organizationNames[row]
     }
 }
 
