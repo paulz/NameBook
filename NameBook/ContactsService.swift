@@ -10,6 +10,12 @@ struct ContactsService {
         return try? contactStore.unifiedContact(withIdentifier: identifier, keysToFetch: [descriptor])
     }
 
+    func onChange(_ block: @escaping ()->()) {
+        NotificationCenter.default.addObserver(forName: .CNContactStoreDidChange, object: nil, queue: nil) { _ in
+            block()
+        }
+    }
+
     func editContact(identifier:String) -> UIViewController? {
         if let unified = contact(identifier: identifier) {
             let controller = CNContactViewController.init(for: unified)

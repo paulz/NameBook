@@ -4,6 +4,7 @@ import StoreKit
 class OrganizationViewController: UIViewController {
     @IBOutlet var namelyAppButton: UIButton!
     @IBOutlet var notEnoughContactsLabel: UILabel!
+    var warningLabelTemplate: String!
 
     var application: UIApplication!
     var contactsService: ContactsService!
@@ -34,17 +35,26 @@ class OrganizationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        warningLabelTemplate = notEnoughContactsLabel.text
         namelyAppButton.setTitle(isNamelyAppInstalled() ? "Open Namely app": "Install Namely app", for: .normal)
-        checkCountAndMoveOn()
+        if !checkCountAndMoveOn() {
+            contactsService.onChange {
+                _ = self.checkCountAndMoveOn()
+            }
+        }
     }
 
-    func checkCountAndMoveOn() {
+    func checkCountAndMoveOn() -> Bool {
         let namelyContacts = contactsService.getContacts(serviceName: "Namely")
-        if namelyContacts.count > 5 {
+        let enoughToPlay = namelyContacts.count > 5
+        if enoughToPlay {
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "have enough contacts to play", sender: self)
             }
+        } else {
+            notEnoughContactsLabel.text = warningLabelTemplate.replacingOccurrences(of: "0", with: "\(namelyContacts.count)")
         }
+        return enoughToPlay
     }
 }
 
