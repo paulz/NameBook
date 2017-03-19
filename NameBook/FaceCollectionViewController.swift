@@ -12,13 +12,30 @@ class FaceCollectionViewController: UIViewController {
     @IBOutlet var fullNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            let minSize = min(view.bounds.width, view.bounds.height) / 2
-            flow.itemSize = CGSize(width: minSize, height: minSize)
-        }
+        fitWithoutScroll()
         let orgContacts = contactsService.getContacts(serviceName: "Namely")
         gameController = GameController(contacts: orgContacts)
         play()
+    }
+
+    private func fitWithoutScroll() {
+        if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let minSize = min(collectionView.bounds.width, collectionView.bounds.height) / 2
+            let optimal = CGSize(width: minSize, height: minSize)
+            if flow.itemSize != optimal {
+                flow.itemSize = optimal
+                flow.invalidateLayout()
+            }
+        }
+    }
+
+    private func onTransitionInContext(context:UIViewControllerTransitionCoordinatorContext) {
+        fitWithoutScroll()
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: onTransitionInContext, completion: onTransitionInContext)
     }
 
     func dismissContact() {
