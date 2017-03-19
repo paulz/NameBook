@@ -22,23 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-9v-ee8">
-                                <rect key="frame" x="94" y="269" width="186" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-9v-ee8">
+                                <rect key="frame" x="136" y="318.5" width="103" height="30"/>
                                 <state key="normal" title="Allow Contacts"/>
                                 <connections>
                                     <action selector="onAllowContactsAccess" destination="nTS-iL-kcr" eventType="touchUpInside" id="20L-eK-zfj"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This app needs access to your contacts to show photos and names to help you memorize them." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Ts-LSB">
-                                <rect key="frame" x="67" y="349" width="240" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This app needs access to your contacts to show photos and names to help you memorize them." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Ts-LSB">
+                                <rect key="frame" x="51.5" y="358.5" width="272" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="JLf-Of-im9"/>
+                                    <constraint firstAttribute="width" constant="272" id="v32-qO-h5B"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vsw-Ts-LSB" firstAttribute="top" secondItem="RGC-9v-ee8" secondAttribute="bottom" constant="10" id="Rgb-np-Tma"/>
+                            <constraint firstItem="RGC-9v-ee8" firstAttribute="centerX" secondItem="6sv-4B-5LI" secondAttribute="centerX" id="XJE-YI-6vv"/>
+                            <constraint firstItem="Vsw-Ts-LSB" firstAttribute="centerX" secondItem="6sv-4B-5LI" secondAttribute="centerX" id="ado-8Z-8zy"/>
+                            <constraint firstItem="RGC-9v-ee8" firstAttribute="centerY" secondItem="6sv-4B-5LI" secondAttribute="centerY" id="imW-Pn-QlM"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="DBD-IM-axA" kind="custom" identifier="can access contacts" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" animates="NO" id="93W-hE-xhv"/>
@@ -222,10 +230,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
-                                <rect key="frame" x="69" y="276" width="255" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
+                                <rect key="frame" x="61.5" y="241.5" width="252" height="113"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="wMZ-GA-ED9"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Add some people from Namely app:
@@ -290,27 +300,39 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvP-ZZ-os9">
-                                <rect key="frame" x="124" y="186" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvP-ZZ-os9">
+                                <rect key="frame" x="124.5" y="151.5" width="126" height="30"/>
                                 <state key="normal" title="Install Namely app"/>
                                 <connections>
                                     <action selector="showNamelyApp" destination="DBD-IM-axA" eventType="touchUpInside" id="UQq-13-SUF"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Person Screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-Md-15B">
-                                <rect key="frame" x="-7" y="423" width="392" height="454"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Person Screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-Md-15B">
+                                <rect key="frame" x="0.0" y="388.5" width="375" height="419.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have 0 contacts from Namely app. And you need a dozen to make this game interesting." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-cx-GFv">
-                                <rect key="frame" x="16" y="102" width="343" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have 0 contacts from Namely app. And you need a dozen to make this game interesting." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-cx-GFv">
+                                <rect key="frame" x="16" y="96" width="343" height="31.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="EBk-DI-95B"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AvP-ZZ-os9" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="3qO-Mk-Ihh"/>
+                            <constraint firstItem="AvP-ZZ-os9" firstAttribute="top" secondItem="6zH-cx-GFv" secondAttribute="bottom" constant="24" id="O60-Ws-UdB"/>
+                            <constraint firstAttribute="trailing" secondItem="HcN-Md-15B" secondAttribute="trailing" id="S8i-cy-6sH"/>
+                            <constraint firstItem="AvP-ZZ-os9" firstAttribute="centerY" secondItem="F0v-61-PjF" secondAttribute="centerY" constant="-167" id="VTz-2F-2gQ"/>
+                            <constraint firstItem="Lva-5m-Y4N" firstAttribute="top" secondItem="HcN-Md-15B" secondAttribute="bottom" constant="-141" id="cgW-5X-0F1"/>
+                            <constraint firstItem="HcN-Md-15B" firstAttribute="top" secondItem="b4s-7G-zzS" secondAttribute="bottom" constant="34" id="d6s-py-I6x"/>
+                            <constraint firstItem="b4s-7G-zzS" firstAttribute="top" secondItem="AvP-ZZ-os9" secondAttribute="bottom" constant="60" id="i4e-2g-Oz7"/>
+                            <constraint firstItem="HcN-Md-15B" firstAttribute="leading" secondItem="F0v-61-PjF" secondAttribute="leading" id="j50-ri-8nZ"/>
+                            <constraint firstItem="6zH-cx-GFv" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="taq-XE-Xb3"/>
+                            <constraint firstItem="b4s-7G-zzS" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="usY-ss-jDD"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="namelyAppButton" destination="AvP-ZZ-os9" id="qi0-41-7i9"/>
@@ -320,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1991.2" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="-1991.3043478260872" y="-322.01086956521743"/>
         </scene>
         <!--Rotating Navigation View Controller-->
         <scene sceneID="Qrv-wp-qWX">
