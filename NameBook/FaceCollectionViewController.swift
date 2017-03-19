@@ -12,6 +12,10 @@ class FaceCollectionViewController: UIViewController {
     @IBOutlet var fullNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let minSize = min(view.bounds.width, view.bounds.height) / 2
+            flow.itemSize = CGSize(width: minSize, height: minSize)
+        }
         let orgContacts = contactsService.getContacts(serviceName: "Namely")
         gameController = GameController(contacts: orgContacts)
         play()
