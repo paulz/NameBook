@@ -238,7 +238,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
-                                <rect key="frame" x="61.5" y="241.5" width="252" height="113"/>
+                                <rect key="frame" x="61.5" y="221.5" width="252" height="113"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="wMZ-GA-ED9"/>
@@ -326,6 +326,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66x-RA-ir1">
+                                <rect key="frame" x="92" y="350" width="267" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Skip for now to play with all contacts"/>
+                                <connections>
+                                    <segue destination="5gR-8u-2jU" kind="custom" identifier="play with all contacts" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" id="Wjt-0v-ewk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -334,8 +342,8 @@
                             <constraint firstAttribute="trailing" secondItem="HcN-Md-15B" secondAttribute="trailing" id="S8i-cy-6sH"/>
                             <constraint firstItem="AvP-ZZ-os9" firstAttribute="centerY" secondItem="F0v-61-PjF" secondAttribute="centerY" constant="-167" id="VTz-2F-2gQ"/>
                             <constraint firstItem="Lva-5m-Y4N" firstAttribute="top" secondItem="HcN-Md-15B" secondAttribute="bottom" constant="-141" id="cgW-5X-0F1"/>
-                            <constraint firstItem="HcN-Md-15B" firstAttribute="top" secondItem="b4s-7G-zzS" secondAttribute="bottom" constant="34" id="d6s-py-I6x"/>
-                            <constraint firstItem="b4s-7G-zzS" firstAttribute="top" secondItem="AvP-ZZ-os9" secondAttribute="bottom" constant="60" id="i4e-2g-Oz7"/>
+                            <constraint firstItem="HcN-Md-15B" firstAttribute="top" secondItem="b4s-7G-zzS" secondAttribute="bottom" constant="54" id="d6s-py-I6x"/>
+                            <constraint firstItem="b4s-7G-zzS" firstAttribute="top" secondItem="AvP-ZZ-os9" secondAttribute="bottom" constant="40" id="i4e-2g-Oz7"/>
                             <constraint firstItem="HcN-Md-15B" firstAttribute="leading" secondItem="F0v-61-PjF" secondAttribute="leading" id="j50-ri-8nZ"/>
                             <constraint firstItem="6zH-cx-GFv" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="taq-XE-Xb3"/>
                             <constraint firstItem="b4s-7G-zzS" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="usY-ss-jDD"/>
@@ -349,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yJ-Ze-9dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1991.3043478260872" y="-322.01086956521743"/>
+            <point key="canvasLocation" x="-1992.8" y="-322.48875562218893"/>
         </scene>
         <!--Rotating Navigation View Controller-->
         <scene sceneID="Qrv-wp-qWX">
@@ -396,4 +404,7 @@
     <resources>
         <image name="Person Screenshot" width="392" height="696"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wjt-0v-ewk"/>
+    </inferredMetricsTieBreakers>
 </document>
