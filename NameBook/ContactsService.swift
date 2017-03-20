@@ -4,19 +4,21 @@ import ContactsUI
 
 struct ContactsService {
     let contactStore = CNContactStore()
+    var selectedServiceName: String? = "Namely"
 
     func contact(identifier:String) -> CNContact? {
         let descriptor = CNContactViewController.descriptorForRequiredKeys()
         return try? contactStore.unifiedContact(withIdentifier: identifier, keysToFetch: [descriptor])
     }
 
-    func onChange(_ block: @escaping ()->()) {
+    func onChange(_ block: @escaping ()->()) -> NSObjectProtocol {
         let center = NotificationCenter.default
         var token: NSObjectProtocol?
         token = center.addObserver(forName: .CNContactStoreDidChange, object: nil, queue: nil) { _ in
             block()
             center.removeObserver(token!)
         }
+        return token!
     }
 
     func editContact(identifier:String) -> UIViewController? {
@@ -56,7 +58,7 @@ struct ContactsService {
         return result
     }
 
-    func getContacts(serviceName: String) -> [String] {
+    func getContacts() -> [String] {
         let stringKeys = [
             CNContactOrganizationNameKey,
             CNContactImageDataAvailableKey,
@@ -65,24 +67,33 @@ struct ContactsService {
         ]
         let request = CNContactFetchRequest(keysToFetch: stringKeys as [CNKeyDescriptor])
         var contacts: Set<CNContact> = Set()
-        var organizationNames: Set<String> = Set()
-        try? contactStore.enumerateContacts(with: request) { (contact, _) in
-            if contact.socialProfiles.contains(where: { $0.value.service == serviceName }),
-                contact.contactType == .person,
-                !contact.organizationName.isEmpty,
-                contact.imageDataAvailable {
-                organizationNames.insert(contact.organizationName)
-                contacts.insert(contact)
+        if selectedServiceName != nil {
+            var organizationNames: Set<String> = Set()
+            try? contactStore.enumerateContacts(with: request) { (contact, _) in
+                if contact.socialProfiles.contains(where: { $0.value.service == self.selectedServiceName }),
+                    contact.contactType == .person,
+                    !contact.organizationName.isEmpty,
+                    contact.imageDataAvailable {
+                    organizationNames.insert(contact.organizationName)
+                    contacts.insert(contact)
+                }
+            }
+            try? contactStore.enumerateContacts(with: request) { (contact, _) in
+                if organizationNames.contains(contact.organizationName),
+                    contact.contactType == .person,
+                    contact.imageDataAvailable {
+                    contacts.insert(contact)
+                }
+            }
+            NSLog("found \(contacts.count) \(selectedServiceName) contacts")
+        } else {
+            try? contactStore.enumerateContacts(with: request) { (contact, _) in
+                if contact.contactType == .person,
+                    contact.imageDataAvailable {
+                    contacts.insert(contact)
+                }
             }
         }
-        try? contactStore.enumerateContacts(with: request) { (contact, _) in
-            if organizationNames.contains(contact.organizationName),
-                contact.contactType == .person,
-                contact.imageDataAvailable {
-                contacts.insert(contact)
-            }
-        }
-        NSLog("found \(contacts.count) \(serviceName) contacts")
         return Array(contacts.map{$0.identifier})
     }
 }

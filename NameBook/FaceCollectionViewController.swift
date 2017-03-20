@@ -11,7 +11,7 @@ class FaceCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fitWithoutScroll()
-        let orgContacts = contactsService.getContacts(serviceName: "Namely")
+        let orgContacts = contactsService.getContacts()
         gameController = GameController(contacts: orgContacts)
         play()
     }

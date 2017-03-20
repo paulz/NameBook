@@ -331,7 +331,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Skip for now to play with all contacts"/>
                                 <connections>
-                                    <segue destination="5gR-8u-2jU" kind="custom" identifier="play with all contacts" customClass="ReplaceRootControllerSegue" customModule="NameBook" customModuleProvider="target" id="Wjt-0v-ewk"/>
+                                    <action selector="skipAndPlayAll" destination="DBD-IM-axA" eventType="touchUpInside" id="zjy-Vr-9jV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -404,7 +404,4 @@
     <resources>
         <image name="Person Screenshot" width="392" height="696"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Wjt-0v-ewk"/>
-    </inferredMetricsTieBreakers>
 </document>

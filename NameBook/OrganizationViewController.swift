@@ -40,8 +40,18 @@ class OrganizationViewController: UIViewController {
         checkCountAndMoveOn()
     }
 
+    @IBAction func skipAndPlayAll() {
+        contactsService.selectedServiceName = nil
+        if let token = observer {
+            NotificationCenter.default.removeObserver(token)
+        }
+        performSegue(withIdentifier: "have enough contacts to play", sender: self)
+    }
+
+    var observer: NSObjectProtocol? = nil
+
     func checkCountAndMoveOn() {
-        let namelyContacts = contactsService.getContacts(serviceName: "Namely")
+        let namelyContacts = contactsService.getContacts()
         let enoughToPlay = namelyContacts.count > 5
         if enoughToPlay {
             DispatchQueue.main.async {
@@ -49,7 +59,7 @@ class OrganizationViewController: UIViewController {
             }
         } else {
             notEnoughContactsLabel.text = warningLabelTemplate.replacingOccurrences(of: "0", with: "\(namelyContacts.count)")
-            contactsService.onChange {
+            observer = contactsService.onChange {
                 self.checkCountAndMoveOn()
             }
         }

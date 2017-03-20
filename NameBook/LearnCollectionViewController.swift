@@ -9,7 +9,7 @@ class LearnCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactIds = contactsService.getContacts(serviceName: "Namely")
+        contactIds = contactsService.getContacts()
         fitWithoutScroll()
     }
 
