@@ -40,8 +40,24 @@ class OrganizationViewController: UIViewController {
         checkCountAndMoveOn()
     }
 
+    func downloadDemoContacts(_ action:UIAlertAction) {
+        UIApplication.shared.open(URL(string: "https://s3.amazonaws.com/name-game/sample-contacts.vcf")!)
+    }
+
     @IBAction func skipAndPlayAll() {
         contactsService.selectedServiceName = nil
+        let allContacts = contactsService.getContacts()
+        if allContacts.count < 6 {
+            let alert = UIAlertController(title: "Not enough contacts", message: "You have \(allContacts.count) contacts with photos and you need at least dozen to play this game", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Download Demo Contacts", style: UIAlertActionStyle.destructive, handler: downloadDemoContacts))
+            present(alert, animated: true)
+        } else {
+            stopWaitingAndPlay()
+        }
+    }
+
+    func stopWaitingAndPlay() {
         if let token = observer {
             NotificationCenter.default.removeObserver(token)
         }

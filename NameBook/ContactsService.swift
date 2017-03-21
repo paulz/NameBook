@@ -2,7 +2,7 @@ import Foundation
 import Contacts
 import ContactsUI
 
-struct ContactsService {
+class ContactsService {
     let contactStore = CNContactStore()
     var selectedServiceName: String? = "Namely"
 
