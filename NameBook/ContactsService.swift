@@ -85,7 +85,7 @@ class ContactsService {
                     contacts.insert(contact)
                 }
             }
-            NSLog("found \(contacts.count) \(selectedServiceName) contacts")
+            NSLog("found \(contacts.count) \(selectedServiceName!) contacts")
         } else {
             try? contactStore.enumerateContacts(with: request) { (contact, _) in
                 if contact.contactType == .person,
