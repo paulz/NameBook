@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTS-iL-kcr">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,18 +19,18 @@
                         <viewControllerLayoutGuide type="bottom" id="qOm-jn-luC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6sv-4B-5LI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-9v-ee8">
-                                <rect key="frame" x="136" y="318.5" width="103" height="30"/>
+                                <rect key="frame" x="108.5" y="269" width="103" height="30"/>
                                 <state key="normal" title="Allow Contacts"/>
                                 <connections>
                                     <action selector="onAllowContactsAccess" destination="nTS-iL-kcr" eventType="touchUpInside" id="20L-eK-zfj"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This app needs access to your contacts to show photos and names to help you memorize them." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Vsw-Ts-LSB">
-                                <rect key="frame" x="51.5" y="358.5" width="272" height="80"/>
+                                <rect key="frame" x="24" y="309" width="272" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="JLf-Of-im9"/>
@@ -65,11 +65,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Dz7-wI-i0e"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sqq-lY-8gP">
-                        <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                        <rect key="frame" x="0.0" y="94" width="320" height="474"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CpM-ef-l4A">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="474"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ng2-dK-BUN">
@@ -154,7 +154,7 @@
             <objects>
                 <collectionViewController id="x6y-nT-aw8" customClass="LearnCollectionViewController" customModule="NameBook" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m9V-WJ-bgm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -166,7 +166,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contact cell" id="JJC-xh-jsp" customClass="ContactCollectionViewCell" customModule="NameBook" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="165" height="231"/>
+                                <rect key="frame" x="78" y="0.0" width="165" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="165" height="231"/>
@@ -234,11 +234,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Lva-5m-Y4N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F0v-61-PjF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b4s-7G-zzS">
-                                <rect key="frame" x="61.5" y="221.5" width="252" height="113"/>
+                                <rect key="frame" x="34" y="166" width="252" height="113"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="113" id="wMZ-GA-ED9"/>
@@ -308,27 +308,23 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvP-ZZ-os9">
-                                <rect key="frame" x="124.5" y="151.5" width="126" height="30"/>
+                                <rect key="frame" x="97" y="102" width="126" height="30"/>
                                 <state key="normal" title="Install Namely app"/>
                                 <connections>
                                     <action selector="showNamelyApp" destination="DBD-IM-axA" eventType="touchUpInside" id="UQq-13-SUF"/>
                                 </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="Person Screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-Md-15B">
-                                <rect key="frame" x="0.0" y="388.5" width="375" height="419.5"/>
+                                <rect key="frame" x="0.0" y="333" width="320" height="376"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have 0 contacts from Namely app. And you need a dozen to make this game interesting." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zH-cx-GFv">
-                                <rect key="frame" x="16" y="96" width="343" height="31.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="EBk-DI-95B"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="46.5" width="320" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66x-RA-ir1">
-                                <rect key="frame" x="92" y="350" width="267" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66x-RA-ir1">
+                                <rect key="frame" x="53" y="294.5" width="251" height="30"/>
                                 <state key="normal" title="Skip for now to play with all contacts"/>
                                 <connections>
                                     <action selector="skipAndPlayAll" destination="DBD-IM-axA" eventType="touchUpInside" id="zjy-Vr-9jV"/>
@@ -340,13 +336,16 @@
                             <constraint firstItem="AvP-ZZ-os9" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="3qO-Mk-Ihh"/>
                             <constraint firstItem="AvP-ZZ-os9" firstAttribute="top" secondItem="6zH-cx-GFv" secondAttribute="bottom" constant="24" id="O60-Ws-UdB"/>
                             <constraint firstAttribute="trailing" secondItem="HcN-Md-15B" secondAttribute="trailing" id="S8i-cy-6sH"/>
+                            <constraint firstAttribute="trailing" secondItem="66x-RA-ir1" secondAttribute="trailing" constant="16" id="UIC-39-Twe"/>
                             <constraint firstItem="AvP-ZZ-os9" firstAttribute="centerY" secondItem="F0v-61-PjF" secondAttribute="centerY" constant="-167" id="VTz-2F-2gQ"/>
                             <constraint firstItem="Lva-5m-Y4N" firstAttribute="top" secondItem="HcN-Md-15B" secondAttribute="bottom" constant="-141" id="cgW-5X-0F1"/>
                             <constraint firstItem="HcN-Md-15B" firstAttribute="top" secondItem="b4s-7G-zzS" secondAttribute="bottom" constant="54" id="d6s-py-I6x"/>
-                            <constraint firstItem="b4s-7G-zzS" firstAttribute="top" secondItem="AvP-ZZ-os9" secondAttribute="bottom" constant="40" id="i4e-2g-Oz7"/>
+                            <constraint firstItem="b4s-7G-zzS" firstAttribute="top" secondItem="AvP-ZZ-os9" secondAttribute="bottom" constant="34" id="i4e-2g-Oz7"/>
                             <constraint firstItem="HcN-Md-15B" firstAttribute="leading" secondItem="F0v-61-PjF" secondAttribute="leading" id="j50-ri-8nZ"/>
+                            <constraint firstItem="HcN-Md-15B" firstAttribute="top" secondItem="66x-RA-ir1" secondAttribute="bottom" constant="8.5" id="kEX-tD-NdM"/>
                             <constraint firstItem="6zH-cx-GFv" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="taq-XE-Xb3"/>
                             <constraint firstItem="b4s-7G-zzS" firstAttribute="centerX" secondItem="F0v-61-PjF" secondAttribute="centerX" id="usY-ss-jDD"/>
+                            <constraint firstItem="6zH-cx-GFv" firstAttribute="width" secondItem="F0v-61-PjF" secondAttribute="width" id="ysm-hA-kuv"/>
                         </constraints>
                     </view>
                     <connections>
