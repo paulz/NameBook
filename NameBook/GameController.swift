@@ -1,8 +1,8 @@
 import Foundation
 
 struct GameController {
-    let gameContacts: Set<String>
-    var queueToPlay: [String] = []
+    private let gameContacts: Set<String>
+    private var queueToPlay: [String] = []
     var choices: [String] = []
     var correct: Int = -1
 
@@ -33,7 +33,7 @@ struct GameController {
         correct = Int(arc4random_uniform(UInt32(choices.count)))
     }
 
-    mutating func randomContacts(count: Int) -> [String] {
+    private mutating func randomContacts(count: Int) -> [String] {
         var selected: [String] = []
         for _ in 1...count {
             if queueToPlay.count == 0 {
