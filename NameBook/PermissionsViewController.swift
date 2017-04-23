@@ -1,5 +1,4 @@
 import UIKit
-import SwinjectStoryboard
 
 class PermissionViewController: UIViewController {
     override func viewDidLoad() {
