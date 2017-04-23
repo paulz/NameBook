@@ -5,7 +5,7 @@ extension FaceCollectionViewController: WithContactsService {}
 extension OrganizationViewController: WithContactsService {}
 extension LearnCollectionViewController: WithContactsService {}
 extension OrganizationViewController {
-    var application: UIApplication { return resolve() }
+    var application: UIApplication { return DepenencyContainer.resolve() }
 }
 
 protocol WithContactsService {
@@ -13,5 +13,5 @@ protocol WithContactsService {
 }
 
 extension WithContactsService {
-    var contactsService: ContactsService { return resolve() }
+    var contactsService: ContactsService { return DepenencyContainer.resolve() }
 }

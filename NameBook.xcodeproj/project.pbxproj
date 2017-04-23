@@ -20,6 +20,7 @@
 		4B3EF4891E75F7380005FAB9 /* FaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */; };
 		4B4D7DAB1EAC76AD002BB55F /* SwinjectStoryboard+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D7DAA1EAC76AD002BB55F /* SwinjectStoryboard+extensions.swift */; };
 		4B4D7DAD1EAC7C91002BB55F /* ControllerInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D7DAC1EAC7C91002BB55F /* ControllerInjection.swift */; };
+		4B4D7DAF1EAC8426002BB55F /* DepenencyContainer+setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D7DAE1EAC8426002BB55F /* DepenencyContainer+setup.swift */; };
 		4BC12A5B1E7CFDFC00D1FFFE /* DepenencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC12A5A1E7CFDFC00D1FFFE /* DepenencyContainer.swift */; };
 		4BC12A5D1E7DCB4900D1FFFE /* PermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */; };
 		4BF152C81E7DD5CC00676015 /* OrganizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */; };
@@ -46,6 +47,7 @@
 		4B3EF4881E75F7380005FAB9 /* FaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		4B4D7DAA1EAC76AD002BB55F /* SwinjectStoryboard+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+extensions.swift"; sourceTree = "<group>"; };
 		4B4D7DAC1EAC7C91002BB55F /* ControllerInjection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerInjection.swift; sourceTree = "<group>"; };
+		4B4D7DAE1EAC8426002BB55F /* DepenencyContainer+setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DepenencyContainer+setup.swift"; sourceTree = "<group>"; };
 		4BC12A5A1E7CFDFC00D1FFFE /* DepenencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepenencyContainer.swift; sourceTree = "<group>"; };
 		4BC12A5C1E7DCB4900D1FFFE /* PermissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PermissionsViewController.swift; sourceTree = "<group>"; };
 		4BF152C71E7DD5CC00676015 /* OrganizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				4BF152CA1E7E28BB00676015 /* ReplaceRootSegue.swift */,
 				4BC12A5A1E7CFDFC00D1FFFE /* DepenencyContainer.swift */,
 				4B4D7DAC1EAC7C91002BB55F /* ControllerInjection.swift */,
+				4B4D7DAE1EAC8426002BB55F /* DepenencyContainer+setup.swift */,
 				4B4D7DAA1EAC76AD002BB55F /* SwinjectStoryboard+extensions.swift */,
 				4B3EF4661E75E4650005FAB9 /* Main.storyboard */,
 				4B3EF4691E75E4650005FAB9 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 				4B4D7DAD1EAC7C91002BB55F /* ControllerInjection.swift in Sources */,
 				4B3EF4851E75F3580005FAB9 /* GameController.swift in Sources */,
 				4B22C0221E7E8C4900C26CCA /* RotatingNavigationViewController.swift in Sources */,
+				4B4D7DAF1EAC8426002BB55F /* DepenencyContainer+setup.swift in Sources */,
 				4B22C01E1E7E7A7700C26CCA /* LearnCollectionViewController.swift in Sources */,
 				D228B78F1E7899B000C6CAD8 /* Array+Shuffle.swift in Sources */,
 				4B3EF4871E75F5DD0005FAB9 /* FaceCollectionViewController.swift in Sources */,
