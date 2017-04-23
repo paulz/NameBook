@@ -4,7 +4,6 @@ import Contacts
 private let reuseIdentifier = "contact cell"
 
 class LearnCollectionViewController: UICollectionViewController {
-    var contactsService: ContactsService!
     var contactIds: [String] = []
 
     override func viewDidLoad() {

@@ -1,8 +1,7 @@
 import UIKit
+import SwinjectStoryboard
 
 class PermissionViewController: UIViewController {
-    var contactsService: ContactsService!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         proceedWhenGranted()
@@ -28,3 +27,4 @@ class PermissionViewController: UIViewController {
         }
     }
 }
+

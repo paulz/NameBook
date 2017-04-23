@@ -6,9 +6,6 @@ class OrganizationViewController: UIViewController {
     @IBOutlet var notEnoughContactsLabel: UILabel!
     var warningLabelTemplate: String!
 
-    var application: UIApplication!
-    var contactsService: ContactsService!
-
     @IBAction func showNamelyApp() {
         if isNamelyAppInstalled() {
             openNamelyApp()
